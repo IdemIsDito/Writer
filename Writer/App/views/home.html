@@ -1,0 +1,11 @@
+﻿<div class="row">
+	<div class="col-sm-12">
+		<h1 class="page-header">Testing</h1>
+		<div data-bind="foreach:stories">
+			<h2 data-bind="text: Id"></h2>
+			<textarea class="form-control" data-bind="value: First"></textarea>
+		</div>
+		<button class="btn btn-default" data-bind="click: newStory">New story</button>
+		<button class="btn btn-default" data-bind="click: save">Save</button>
+	</div>
+</div>
