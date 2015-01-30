@@ -1,15 +1,24 @@
 ﻿define(['Q', 'breeze', 'config', 'services/logger'], function (Q, breeze, config, logger) {
 
 	var serviceUrl = config.breezeRoot + 'data',
-		manager = new breeze.EntityManager(serviceUrl);
+		manager = new breeze.EntityManager(serviceUrl),
+		initialized = false;
 
 	return {
+		initialize: initialize,
 		newStory: newStory,
 		getStory: getStory,
 		getStories: getStories,
 		saveChanges: saveChanges
 	};
 	/* Private functions */
+	function initialize() {
+		if (!initialized) {
+			initialized = true;
+			return manager.fetchMetadata();
+		}
+		return Q.resolve();
+	}
 	function newStory() {
 		return manager.createEntity('Story');
 	}

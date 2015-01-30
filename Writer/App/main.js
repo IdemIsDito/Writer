@@ -18,14 +18,20 @@ define([
 	'durandal/system',
 	'durandal/app',
 	'durandal/viewLocator',
-	'config'
+	'config',
+	'services/context'
 ], function (
 	system,
 	app,
 	viewLocator,
-	config
+	config,
+	context
 ) {
 	system.debug(config.scriptCache);
+
+	toastr.options = {
+		positionClass: 'toast-top-full-width'
+	};
 
 	app.title = 'SIMA Writer';
 
@@ -35,6 +41,7 @@ define([
 	});
 
 	app.start()
+		.then(context.initialize())
 		.then(function () {
 			viewLocator.useConvention();
 			app.setRoot('viewmodels/shell');
