@@ -10,7 +10,8 @@
  * @requires composition
  * @requires jquery
  */
-define(['durandal/system', 'durandal/composition', 'jquery'], function(system, composition, $) {
+define(['durandal/system', 'durandal/composition', 'jquery'], function (system, composition, $) {
+	debugger;
     var fadeOutDuration = 100;
     var endValues = {
         left: '0px',

@@ -27,7 +27,8 @@ define([
 	config,
 	context
 ) {
-	system.debug(config.scriptCache);
+
+	system.debug(config.debug);
 
 	toastr.options = {
 		positionClass: 'toast-top-full-width'
