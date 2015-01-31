@@ -12,8 +12,9 @@ namespace Writer.Models
 		public WriterContext() : base("WriterContext")
 		{
 		}
-
-		public IDbSet<Story> Stories { get; set; } 
+		public IDbSet<Participant> Participants { get; set; } 
+		public IDbSet<ClassicStory> ClassicStories { get; set; } 
+		public IDbSet<EnhancedStory> EnhancedStories { get; set; } 
 
 	}
 }

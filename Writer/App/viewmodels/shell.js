@@ -1,18 +1,23 @@
-﻿define(['plugins/router'], function (router) {
+﻿define([
+	'config',
+	'plugins/router'
+], function (
+	config,
+	router
+) {
 	var vm = function () {
 		this.router = router;
 		this.mapRouter = function () {
 			var routes = [];
 			ko.utils.arrayPushAll(routes, [
-                { route: '', moduleId: 'viewmodels/home', title: 'Home', nav: true },
-                { route: '', moduleId: 'viewmodels/test', title: 'Test', nav: true }
+                { route: ['','home(/:id)'], moduleId: 'viewmodels/home', title: 'Home', nav: true }
 			]);
 			router
 				.map(routes)
-				.buildNavigationModel();
-				.mapUnknownRoutes('hello/index', 'not-found');
+				.buildNavigationModel()
+				.mapUnknownRoutes('viewmodels/404', '404-page-not-foud');
 		};
-		this.activate = function () {
+		this.activate = function (bla) {
 			this.mapRouter();
 			return this.router.activate();
 		};

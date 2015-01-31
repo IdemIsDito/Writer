@@ -6,12 +6,12 @@
 	helper
 ) {
 	var settings = {
-			inAnimation: 'fadeInUp',
-			outAnimation: 'fadeOutUp'
+			inAnimation: 'zoomIn',
+			outAnimation: 'zoomOut'
 		},
-		fadeUp = function (context) {
+		zoom = function (context) {
 			system.extend(context, settings);
 			return helper.create(context);
 		};
-	return fadeUp;
+	return zoom;
 });

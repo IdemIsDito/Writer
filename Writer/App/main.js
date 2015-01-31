@@ -30,10 +30,6 @@ define([
 
 	system.debug(config.debug);
 
-	toastr.options = {
-		positionClass: 'toast-top-full-width'
-	};
-
 	app.title = 'SIMA Writer';
 
 	app.configurePlugins({

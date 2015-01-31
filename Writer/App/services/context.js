@@ -6,9 +6,8 @@
 
 	return {
 		initialize: initialize,
-		newStory: newStory,
-		getStory: getStory,
-		getStories: getStories,
+		createClassicStory: createClassicStory,
+		getClassicStory: getClassicStory,
 		saveChanges: saveChanges
 	};
 	/* Private functions */
@@ -19,16 +18,12 @@
 		}
 		return Q.resolve();
 	}
-	function newStory() {
-		return manager.createEntity('Story');
+	function createClassicStory() {
+		return manager.createEntity('ClassicStory');
 	}
-	function getStory(id) {
-		var q = breeze.EntityQuery.from("Stories")
+	function getClassicStory(id) {
+		var q = breeze.EntityQuery.from("ClassicStories")
 			.where("Id", "==", id);
-		return manager.executeQuery(q);
-	}
-	function getStories() {
-		var q = breeze.EntityQuery.from("Stories");
 		return manager.executeQuery(q);
 	}
 	function saveChanges() {
@@ -41,7 +36,8 @@
 					logger.logError("Save succesful", error, null, true);
 				});
 		} else {
-			logger.logInfo("Nothing to save", null, null, true);
+			logger.logInfo("Nothing to save", null, null, false);
+			return Q.resolve();
 		};
 	}
 });

@@ -5,12 +5,15 @@ using System.Runtime.Serialization;
 namespace Writer.Models
 {
 	[DataContract]
-	public class Story
+	public class ClassicStory
 	{
 		[Key, DataMember]
 		public int Id { get; set; }
 
 		[DataMember]
 		public string First { get; set; }
+		
+		[DataMember]
+		public string Second { get; set; }
 	}
 }

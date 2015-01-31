@@ -20,9 +20,14 @@ namespace Writer.Controllers
 		}
 
 		[HttpGet]
-		public IQueryable<Story> Stories()
+		public IQueryable<ClassicStory> ClassicStories()
 		{
-			return _context.Context.Stories;
+			return _context.Context.ClassicStories;
+		}
+		[HttpGet]
+		public IQueryable<EnhancedStory> EnhancedStories()
+		{
+			return _context.Context.EnhancedStories;
 		}
 
 		[HttpPost]

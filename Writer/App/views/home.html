@@ -1,14 +1,17 @@
 ﻿<div class="container">
 	<div class="row">
-		<div class="col-sm-12">
-			<h1 class="page-header">Testing</h1>
-			<div data-bind="foreach:stories">
-				<h2 data-bind="text: Id"></h2>
-				<textarea class="form-control" data-bind="value: First"></textarea>
+		<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="page-header text-center">Testing</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<div data-bind="compose: { view: activeView, transition: 'fadeUp' }"></div>
+		</div>
+		<div class="col-xs-1">
+			<div class="indicators" data-bind="foreach: views">
+				<div data-bind="attr: { 'title' : $data } , click: $parent.activateView.bind($data), css:{ 'active': $data === $parent.activeView() }" class="indicator"></div>
 			</div>
-			<button class="btn btn-default" data-bind="click: newStory">New story</button>
-			<button class="btn btn-default" data-bind="click: save">Save</button>
 		</div>
 	</div>
 </div>
-
