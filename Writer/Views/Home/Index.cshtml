@@ -14,7 +14,6 @@
         <link rel="apple-touch-startup-image" href="~/Content/images/ios-startup-image-landscape.png" media="(orientation:landscape)" />
         <link rel="apple-touch-startup-image" href="~/Content/images/ios-startup-image-portrait.png" media="(orientation:portrait)" />
         <link rel="apple-touch-icon" href="~/Content/images/icon.png"/>
-        
         @Styles.Render("~/Content/css")
     </head>
     <body>
@@ -23,7 +22,7 @@
         </div>
         
 		<script type="text/javascript">@("var scriptCache = " + Html.Raw(Json.Encode(ViewBag.SiteConfig.scriptCache)) + ";")</script>
-		@Scripts.Render("~/Scripts/vendor")
+		@Scripts.Render("~/Scripts/js")
 		<script type="text/javascript" src="@Url.Content("~/Scripts/require.js")" data-main="@(ViewBag.SiteConfig.appJs)"></script>
 		<script type="text/javascript">
 			define('config', function () {

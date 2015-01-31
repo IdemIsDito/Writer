@@ -11,19 +11,19 @@ namespace Writer
 			AddDefaultIgnorePatterns(bundles.IgnoreList);
 
 			bundles.Add(
-				new ScriptBundle("~/scripts/vendor")
-					.Include("~/Scripts/jquery-{version}.js")
-					.Include("~/Scripts/knockout-{version}.js")
-					.Include("~/Scripts/bootstrap.js")
-					.Include("~/Scripts/toastr.js")
-				);
-
-			bundles.Add(
 				new StyleBundle("~/Content/css")
+					.Include("~/Content/animate.css")
 					.Include("~/Content/bootstrap.css")
 					.Include("~/Content/durandal.css")
 					.Include("~/Content/toastr.css")
 					.Include("~/Content/app.css")
+				);
+			bundles.Add(
+				new ScriptBundle("~/Scripts/js")
+					.Include("~/Scripts/jquery-{version}.js")
+					.Include("~/Scripts/knockout-{version}.js")
+					.Include("~/Scripts/bootstrap.js")
+					.Include("~/Scripts/toastr.js")
 				);
 		}
 
