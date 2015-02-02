@@ -17,7 +17,8 @@
 				.buildNavigationModel()
 				.mapUnknownRoutes('viewmodels/404', '404-page-not-foud');
 		};
-		this.activate = function (bla) {
+		this.activate = function () {
+			debugger;
 			this.mapRouter();
 			return this.router.activate();
 		};
