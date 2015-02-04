@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using Breeze.ContextProvider;
 using Breeze.ContextProvider.EF6;
@@ -20,10 +22,48 @@ namespace Writer.Controllers
 		}
 
 		[HttpGet]
-		public IQueryable<ClassicStory> ClassicStories()
+		public string GetStoryTypeForAssignment()
 		{
-			return _context.Context.ClassicStories;
+			var random = new Random();
+
+			var storyTypes = new List<string>
+			{
+				"ClassicStories",
+				"EnhancedStories"
+			};
+
+			var classicCount =
+				_context.Context.Participants
+					.Count(x => x.StoryType == "ClassicStories");
+
+			var enhancedCount =
+				_context.Context.Participants
+					.Count(x => x.StoryType == "EnhancedStories");
+
+			return
+				classicCount == enhancedCount
+					? storyTypes.OrderBy(x => random.Next()).First()
+					: classicCount > enhancedCount
+						? "EnhancedStories"
+						: "ClassicStories";
 		}
+
+		[HttpGet]
+		public
+		IQueryable<Participant> Participants()
+		{
+			return
+				_context.Context.Participants;
+		}
+
+		[HttpGet]
+		public
+		IQueryable<ClassicStory> ClassicStories()
+		{
+			return
+				_context.Context.ClassicStories;
+		}
+
 		[HttpGet]
 		public IQueryable<EnhancedStory> EnhancedStories()
 		{

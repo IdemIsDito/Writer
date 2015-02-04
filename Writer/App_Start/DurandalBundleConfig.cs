@@ -16,6 +16,7 @@ namespace Writer
 					.Include("~/Content/bootstrap.css")
 					.Include("~/Content/durandal.css")
 					.Include("~/Content/toastr.css")
+//					.Include("~/Content/ladda.css")
 					.Include("~/Content/app.css")
 				);
 			bundles.Add(
@@ -24,6 +25,7 @@ namespace Writer
 					.Include("~/Scripts/knockout-{version}.js")
 					.Include("~/Scripts/bootstrap.js")
 					.Include("~/Scripts/toastr.js")
+//					.Include("~/Scripts/ladda.js")
 				);
 		}
 

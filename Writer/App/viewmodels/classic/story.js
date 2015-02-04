@@ -24,9 +24,9 @@
 				context.getClassicStory(id)
 					.then(function (data) {
 						self.story(data.results[0]);
-						logger.logSuccess('Succesful activation', data, 'home.js', false);
+						logger.logSuccess('Succesful activation', data, 'classic.js-activate', false);
 					}).fail(function (error) {
-						logger.logError('Error while activate', error, 'home.js', true);
+						logger.logError('Error while activate', error, 'classic.js-activate', true);
 					});
 
 			} else {
@@ -51,7 +51,7 @@
 					self.activeView(self.getChildView('prev'));
 				})
 				.fail(function (error) {
-					logger.logError('Error while navigate prev', error, 'home.js-this.prev', true);
+					logger.logError('Error while navigate prev', error, 'classic.js-prev', true);
 				});
 		};
 		this.next = function () {
@@ -60,11 +60,11 @@
 					self.activeView(self.getChildView('next'));
 				})
 				.fail(function (error) {
-					logger.logError('Error while navigating next', error, 'home.js-this.prev', true);
+					logger.logError('Error while navigating next', error, 'classic.js-next', true);
 				});
 		};
 		this.complete = function () {
-			logger.logInfo('Completed', null, 'home.js-this.complete', true);
+			logger.logInfo('Completed', null, 'classic.js-complete', true);
 		};
 		this.newStory = function () {
 			context.newStory();

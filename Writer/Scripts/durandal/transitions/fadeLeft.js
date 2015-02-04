@@ -6,8 +6,8 @@
 	helper
 ) {
 	var settings = {
-			inAnimation: 'zoomIn',
-			outAnimation: 'zoomOut'
+			inAnimation: 'fadeInRight',
+			outAnimation: 'fadeOutLeft'
 		},
 		zoom = function (context) {
 			system.extend(context, settings);

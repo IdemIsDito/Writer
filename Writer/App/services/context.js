@@ -6,6 +6,8 @@
 
 	return {
 		initialize: initialize,
+		getParticipantByGuid: getParticipantByGuid,
+		createParticipant: createParticipant,
 		createClassicStory: createClassicStory,
 		getClassicStory: getClassicStory,
 		saveChanges: saveChanges
@@ -17,6 +19,31 @@
 			return manager.fetchMetadata();
 		}
 		return Q.resolve();
+	}
+
+	function getParticipantByGuid(guid) {
+		var q = breeze.EntityQuery.from("Participants")
+			.where("Guid", "==", guid);
+		return manager.executeQuery(q);
+	}
+
+	function createParticipant() {
+		var storyType = getStoryTypeForAssignment();
+		return manager.createEntity('Participant', {
+			Guid: breeze.core.getUuid(),
+			StoryType: storyType
+	});
+	}
+	function getStoryTypeForAssignment() {
+		var storyType;
+		$.ajax({
+			url: serviceUrl + '/GetStoryTypeForAssignment',
+			success: function(data) {
+				storyType = data;
+			},
+			async:false
+		});
+		return storyType;
 	}
 	function createClassicStory() {
 		return manager.createEntity('ClassicStory');

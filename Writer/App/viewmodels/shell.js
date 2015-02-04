@@ -1,24 +1,40 @@
 ﻿define([
-	'config',
+	'services/globals',
 	'plugins/router'
 ], function (
-	config,
+	globals,
 	router
 ) {
 	var vm = function () {
 		this.router = router;
+
 		this.mapRouter = function () {
 			var routes = [];
+
 			ko.utils.arrayPushAll(routes, [
-                { route: ['','home(/:id)'], moduleId: 'viewmodels/home', title: 'Home', nav: true }
+				{ route: [''], moduleId: 'viewmodels/welcome', title: 'Welkom', nav: false},
+				{ route: 'demographics(/:guid)', moduleId: 'viewmodels/demographics', title: 'Demografische gegevens', nav: false }
 			]);
+
+			if (globals.storyType === 'ClassicStories') {
+				ko.utils.arrayPushAll(routes, [
+					{ route: 'instructions', moduleId: 'viewmodels/classic/instructions', title: 'Home', nav: false },
+					{ route: 'story(/:guid)', moduleId: 'viewmodels/classic/story', title: 'Story Writer', nav: false }
+				]);
+			} else {
+				ko.utils.arrayPushAll(routes, [
+					{ route: 'instructions', moduleId: 'viewmodels/enhanced/instructions', title: 'Instructions', nav: false },
+					{ route: 'story(/:guid)', moduleId: 'viewmodels/enhanced/story', title: 'Story Writer', nav: false }
+				]);
+			}
+
 			router
 				.map(routes)
 				.buildNavigationModel()
 				.mapUnknownRoutes('viewmodels/404', '404-page-not-foud');
 		};
+
 		this.activate = function () {
-			debugger;
 			this.mapRouter();
 			return this.router.activate();
 		};

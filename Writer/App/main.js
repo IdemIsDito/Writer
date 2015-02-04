@@ -19,16 +19,18 @@ define([
 	'durandal/app',
 	'durandal/viewLocator',
 	'config',
+	'services/globals',
 	'services/context'
 ], function (
 	system,
 	app,
 	viewLocator,
 	config,
+	globals,
 	context
 ) {
-
-	system.debug(config.debug);
+	ko.utils.extend(globals, config);
+	system.debug(globals.debug);
 
 	app.title = 'SIMA Writer';
 
@@ -37,8 +39,8 @@ define([
 		dialog: true,
 	});
 
-	app.start()
-		.then(context.initialize())
+	context.initialize()
+		.then(app.start())
 		.then(function () {
 			viewLocator.useConvention();
 			app.setRoot('viewmodels/shell');
