@@ -181,6 +181,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App\dialogs\inspire.html" />
+    <Content Include="App\dialogs\inspire.js" />
     <Content Include="App\services\globals.js" />
     <Content Include="App\main.js" />
     <Content Include="App\services\context.js" />

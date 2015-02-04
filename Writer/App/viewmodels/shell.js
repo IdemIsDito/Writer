@@ -16,17 +16,17 @@
 				{ route: 'demographics(/:guid)', moduleId: 'viewmodels/demographics', title: 'Demografische gegevens', nav: false }
 			]);
 
-			if (globals.storyType === 'ClassicStories') {
+//			if (globals.storyType === 'ClassicStories') {
 				ko.utils.arrayPushAll(routes, [
 					{ route: 'instructions', moduleId: 'viewmodels/classic/instructions', title: 'Home', nav: false },
 					{ route: 'story(/:guid)', moduleId: 'viewmodels/classic/story', title: 'Story Writer', nav: false }
 				]);
-			} else {
-				ko.utils.arrayPushAll(routes, [
-					{ route: 'instructions', moduleId: 'viewmodels/enhanced/instructions', title: 'Instructions', nav: false },
-					{ route: 'story(/:guid)', moduleId: 'viewmodels/enhanced/story', title: 'Story Writer', nav: false }
-				]);
-			}
+//			} else {
+//				ko.utils.arrayPushAll(routes, [
+//					{ route: 'instructions', moduleId: 'viewmodels/enhanced/instructions', title: 'Instructions', nav: false },
+//					{ route: 'story(/:guid)', moduleId: 'viewmodels/enhanced/story', title: 'Story Writer', nav: false }
+//				]);
+//			}
 
 			router
 				.map(routes)

@@ -1,11 +1,15 @@
 ﻿define([
 	'config',
 	'services/logger',
-	'services/context'
+	'services/context',
+	'plugins/dialog',
+	'dialogs/inspire'
 ], function (
 	config,
 	logger,
-	context
+	context,
+	dialog,
+	InstpirationDialog
 ) {
 	var vm = function () {
 		var self = this;
@@ -62,6 +66,9 @@
 				.fail(function (error) {
 					logger.logError('Error while navigating next', error, 'classic.js-next', true);
 				});
+		};
+		this.launchInspiration = function () {
+			dialog.show(new InstpirationDialog());
 		};
 		this.complete = function () {
 			logger.logInfo('Completed', null, 'classic.js-complete', true);
