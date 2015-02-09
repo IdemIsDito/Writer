@@ -1,14 +1,10 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace Writer.Models
 {
-	public class Participant
+	public class Participant : AppEntity
 	{
-		[Key, DataMember]
-		public int Id { get; set; }
-
 		[DataMember]
 		public Guid Guid { get; set; }
 

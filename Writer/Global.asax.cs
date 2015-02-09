@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Infrastructure.Interception;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;

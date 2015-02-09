@@ -167,8 +167,10 @@
     <Compile Include="App_Start\DurandalBundleConfig.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\AppEntity.cs" />
     <Compile Include="Models\EnhancedStory.cs" />
     <Compile Include="Models\Initializer.cs" />
+    <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Participant.cs" />
     <Compile Include="Models\WriterContext.cs" />
     <Compile Include="Global.asax.cs">
