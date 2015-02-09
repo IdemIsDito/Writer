@@ -10,6 +10,7 @@
 		createParticipant: createParticipant,
 		createClassicStory: createClassicStory,
 		getClassicStory: getClassicStory,
+		hasChanges: hasChanges,
 		saveChanges: saveChanges
 	};
 	/* Private functions */
@@ -53,15 +54,12 @@
 			.where("Id", "==", id);
 		return manager.executeQuery(q);
 	}
+	function hasChanges() {
+		return manager.hasChanges();
+	};
 	function saveChanges() {
 		if (manager.hasChanges()) {
-			return manager.saveChanges()
-				.then(function () {
-					logger.logSuccess("Save succesful", null, null, true);
-				})
-				.fail(function (error) {
-					logger.logError("Save succesful", error, null, true);
-				});
+			return manager.saveChanges();
 		} else {
 			logger.logInfo("Nothing to save", null, null, false);
 			return Q.resolve();

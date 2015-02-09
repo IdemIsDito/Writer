@@ -39,6 +39,44 @@ namespace Writer.Controllers
 
 			return View();
 		}
+
+		public ActionResult IndexReturningParticipant(string id,
+#if DEBUG
+			bool scriptCache = false
+#else
+			bool scriptCache = true
+#endif
+			,
+#if DEBUG
+			bool debug = true
+#else
+			bool debug = false
+#endif
+			)
+		{
+			string siteRoot = HttpContext.Request.ApplicationPath ?? "";
+
+			if (siteRoot.EndsWith("/"))
+			{
+				siteRoot = siteRoot.Substring(0, siteRoot.Length - 1);
+			}
+
+			var config =
+				new Config
+				{
+					siteRoot = siteRoot,
+					breezeRoot = siteRoot + "/breeze/",
+					imageRoot = siteRoot + "/Content/images/",
+					appJs = siteRoot + "/App/main",
+					scriptCache = scriptCache,
+					debug = debug,
+					participantGuid = id
+				};
+
+			ViewBag.SiteConfig = config;
+
+			return View("Index");
+		}
 	}
 
 	public class Config
@@ -50,6 +88,7 @@ namespace Writer.Controllers
 		public string appJs { get; set; }
 		public bool scriptCache { get; set; }
 		public bool debug { get; set; }
+		public string participantGuid { get; set; }
 		// ReSharper restore InconsistentNaming
 	}
 }
