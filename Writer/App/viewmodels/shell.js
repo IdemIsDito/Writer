@@ -25,12 +25,12 @@
 			if (globals.participant().StoryType() === 'ClassicStories') {
 				ko.utils.arrayPushAll(routes, [
 					{ route: 'instructions', moduleId: 'viewmodels/classic/instructions', title: 'Instructions', nav: false },
-					{ route: 'story', moduleId: 'viewmodels/classic/story', title: 'Activity Writer', nav: false }
+					{ route: 'activiteit', moduleId: 'viewmodels/classic/activity', title: 'Activity Writer', nav: false }
 				]);
 			} else {
 				ko.utils.arrayPushAll(routes, [
 					{ route: 'instructions', moduleId: 'viewmodels/enhanced/instructions', title: 'Instructions', nav: false },
-					{ route: 'story', moduleId: 'viewmodels/enhanced/story', title: 'Activity Writer', nav: false }
+					{ route: 'activiteit', moduleId: 'viewmodels/enhanced/activity', title: 'Activity Writer', nav: false }
 				]);
 			}
 

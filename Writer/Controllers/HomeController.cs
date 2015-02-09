@@ -18,7 +18,7 @@ namespace Writer.Controllers
 #endif
 			)
 		{
-			string siteRoot = HttpContext.Request.ApplicationPath ?? "";
+			var siteRoot = HttpContext.Request.ApplicationPath ?? "";
 
 			if (siteRoot.EndsWith("/"))
 			{

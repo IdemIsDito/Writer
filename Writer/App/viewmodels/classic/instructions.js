@@ -1,6 +1,6 @@
 ﻿define(function () {
 	var vm = function () {
-		this.title = "Classic Instuctions";
+		this.title = "Instructies";
 	};
 	return vm;
 })

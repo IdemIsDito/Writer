@@ -1,47 +1,38 @@
 ﻿define([
-	'config',
+	'services/globals',
 	'services/logger',
-	'services/context',
-	'plugins/dialog',
-	'dialogs/inspire'
+	'services/context'
 ], function (
-	config,
+	globals,
 	logger,
-	context,
-	dialog,
-	InstpirationDialog
+	context
 ) {
 	var vm = function () {
 		var self = this;
 		this.views = [
-			'first',
-			'second',
-			'summary'
+			'classic/title',
+			'classic/summary',
+			'classic/initiation',
+			'classic/proceedings',
+			'classic/satisfaction',
+			'classic/overview'
 		];
-		this.story = ko.observableArray();
+		this.activity = ko.observable();
 		this.activeView = ko.observable(this.views[0]);
 		this.activateView = function (viewName) {
 			self.activeView(viewName);
 		};
-		this.activate = function (id) {
-			if (id) {
-				context.getClassicStory(id)
-					.then(function (data) {
-						self.story(data.results[0]);
-						logger.logSuccess('Succesful activation', data, 'classic.js-activate', false);
-					}).fail(function (error) {
-						logger.logError('Error while activate', error, 'classic.js-activate', true);
-					});
-
-			} else {
-				self.story(context.createClassicStory());
-			}
-		};
-		this.bindingComplete = function (view) {
-			$(view)
-				.find('.indicator')
-				.tooltip({
-					placement: 'right'
+		this.activate = function () {
+			context.getClassicStoryByParticipant()
+				.then(function (data) {
+					if (data.results.length > 0) {
+						self.activity(data.results[0]);
+					} else {
+						self.activity(context.createClassicStory());
+					}
+					logger.logSuccess('Succesful activation', data, 'classic.js-activate', false);
+				}).fail(function (error) {
+					logger.logError('Error while activate', error, 'classic.js-activate', true);
 				});
 		};
 		this.getChildView = function (direction) {
@@ -67,11 +58,9 @@
 					logger.logError('Error while navigating next', error, 'classic.js-next', true);
 				});
 		};
-		this.launchInspiration = function () {
-			dialog.show(new InstpirationDialog());
-		};
 		this.complete = function () {
-			logger.logInfo('Completed', null, 'classic.js-complete', true);
+			this.activity().Completed(true);
+			context.saveChanges();
 		};
 		this.newStory = function () {
 			context.newStory();

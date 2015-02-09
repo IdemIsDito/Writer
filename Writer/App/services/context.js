@@ -1,5 +1,16 @@
-﻿define(['Q', 'breeze', 'config', 'services/logger'], function (Q, breeze, config, logger) {
-
+﻿define([
+	'Q',
+	'breeze',
+	'config',
+	'services/globals',
+	'services/logger'
+], function (
+	Q,
+	breeze,
+	config,
+	globals,
+	logger
+) {
 	var serviceUrl = config.breezeRoot + 'data',
 		manager = new breeze.EntityManager(serviceUrl),
 		initialized = false;
@@ -9,7 +20,7 @@
 		getParticipantByGuid: getParticipantByGuid,
 		createParticipant: createParticipant,
 		createClassicStory: createClassicStory,
-		getClassicStory: getClassicStory,
+		getClassicStoryByParticipant: getClassicStoryByParticipant,
 		hasChanges: hasChanges,
 		saveChanges: saveChanges
 	};
@@ -47,11 +58,13 @@
 		return storyType;
 	}
 	function createClassicStory() {
-		return manager.createEntity('ClassicStory');
+		return manager.createEntity('ClassicStory', {
+			ParticipantId: globals.participant().Id()
+		});
 	}
-	function getClassicStory(id) {
+	function getClassicStoryByParticipant() {
 		var q = breeze.EntityQuery.from("ClassicStories")
-			.where("Id", "==", id);
+			.where("ParticipantId", "==", globals.participant().Id());
 		return manager.executeQuery(q);
 	}
 	function hasChanges() {
