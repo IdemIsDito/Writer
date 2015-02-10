@@ -1,7 +1,7 @@
 ﻿<form>
 	<fieldset data-bind="with: activity">
-		<div class="form-group">
-			<label>Hoe kwam u ertoe deze activiteit te verrichten, hoe kwam uw deelname tot stand?</label>
+		<div class="form-group" data-bind="validationElement: Initiation">
+			<label class="control-label">Hoe kwam u ertoe deze activiteit te verrichten, hoe kwam uw deelname tot stand?</label>
 			<textarea class="form-control" rows="10" data-bind="value: Initiation"></textarea>
 		</div>
 	</fieldset>
