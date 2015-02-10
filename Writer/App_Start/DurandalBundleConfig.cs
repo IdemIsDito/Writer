@@ -23,6 +23,7 @@ namespace Writer
 				new ScriptBundle("~/Scripts/js")
 					.Include("~/Scripts/jquery-{version}.js")
 					.Include("~/Scripts/knockout-{version}.js")
+					.Include("~/Scripts/knockout.validation.js")
 					.Include("~/Scripts/bootstrap.js")
 					.Include("~/Scripts/toastr.js")
 //					.Include("~/Scripts/ladda.js")

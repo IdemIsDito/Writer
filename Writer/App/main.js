@@ -30,7 +30,10 @@ define([
 	context
 ) {
 	ko.utils.extend(globals, config);
-
+	ko.validation.init({
+		errorElementClass: 'has-error',
+		errorMessageClass: 'help-block',
+	});
 	system.debug(globals.debug);
 
 	app.title = 'SIMA Writer';

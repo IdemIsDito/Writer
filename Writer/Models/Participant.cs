@@ -21,13 +21,13 @@ namespace Writer.Models
 		public string Gender { get; set; }
 
 		[DataMember]
-		public string Nationality { get; set; }
+		public string MotherLanguageDutch { get; set; }
 
 		[DataMember]
 		public string EducationCompleted { get; set; }
 
 		[DataMember]
-		public string EmploymentStatus { get; set; }
+		public string EducationCompletedDifferent { get; set; }
 
 		[DataMember]
 		public string SimaExperience { get; set; }
