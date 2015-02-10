@@ -10,11 +10,11 @@ namespace Writer
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 			
 			routes.MapRoute(
-				"DefaultReturningParticipant",
-				"{id}",
+				"ReturningParticipant",
+				"{guid}",
 				new {
 					controller = "Home",
-					action = "IndexReturningParticipant"
+					action = "ReturningParticipant"
 				}
 			);
 			

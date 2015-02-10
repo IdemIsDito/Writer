@@ -18,19 +18,19 @@
 			var routes = [];
 
 			ko.utils.arrayPushAll(routes, [
-				{ route: '', moduleId: 'viewmodels/welcome', title: 'Welkom', nav: false},
-				{ route: 'demographics', moduleId: 'viewmodels/demographics', title: 'Demografische gegevens', nav: false }
+				{ route: '', moduleId: 'viewmodels/welcome', title: 'Welkom', nav: true},
+				{ route: 'demographics', moduleId: 'viewmodels/demographics', title: 'Demografische gegevens', nav: true }
 			]);
 
 			if (globals.participant().StoryType() === 'ClassicStories') {
 				ko.utils.arrayPushAll(routes, [
-					{ route: 'instructions', moduleId: 'viewmodels/classic/instructions', title: 'Instructions', nav: false },
-					{ route: 'activiteit', moduleId: 'viewmodels/classic/activity', title: 'Activity Writer', nav: false }
+					{ route: 'instructions', moduleId: 'viewmodels/classic/instructions', title: 'Instructies', nav: true },
+					{ route: 'activiteit', moduleId: 'viewmodels/classic/activity', title: 'Activiteit', nav: true }
 				]);
 			} else {
 				ko.utils.arrayPushAll(routes, [
-					{ route: 'instructions', moduleId: 'viewmodels/enhanced/instructions', title: 'Instructions', nav: false },
-					{ route: 'activiteit', moduleId: 'viewmodels/enhanced/activity', title: 'Activity Writer', nav: false }
+					{ route: 'instructions', moduleId: 'viewmodels/enhanced/instructions', title: 'Instructions', nav: true },
+					{ route: 'activiteit', moduleId: 'viewmodels/enhanced/activity', title: 'Activiteit', nav: true }
 				]);
 			}
 
@@ -46,21 +46,13 @@
 		};
 
 		this.activate = function () {
-			if (globals.participantGuid) {
-				context.getParticipantByGuid(globals.participantGuid)
-					.then(function (data) {
-						globals.participant(data.results[0]);
-					})
-					.then(function () {
-						return self.activateRouter();
-					});
-			} else {
-				globals.participant(context.createParticipant());
-				context.saveChanges()
-					.then(function () {
-						return self.activateRouter();
+			context.getParticipantByGuid(globals.participantGuid)
+				.then(function (data) {
+					globals.participant(data.results[0]);
+				})
+				.then(function () {
+					return self.activateRouter();
 				});
-			}
 		};
 	};
 	return vm;
