@@ -77,18 +77,26 @@ namespace Writer.Controllers
 #endif
 			)
 		{
+			var parsedGuid = Guid.Parse(guid);
+			var entryCompleted = _context.Context.Participants.Count(p => p.Guid == parsedGuid && p.Completed);
 			var siteRoot = GetSiteRoot();
+			if (entryCompleted > 0)
+			{
+				ViewBag.SiteRoot = siteRoot;
+				return View("Completed");
+			}
+			
 			var config = new Config
-				{
-					siteRoot = siteRoot,
-					returnURL = siteRoot + "/" + guid + "/",
-					breezeRoot = siteRoot + "/breeze/",
-					imageRoot = siteRoot + "/Content/images/",
-					appJs = siteRoot + "/App/main",
-					scriptCache = scriptCache,
-					debug = debug,
-					participantGuid = guid
-				};
+			{
+				siteRoot = siteRoot,
+				returnURL = siteRoot + "/" + guid + "/",
+				breezeRoot = siteRoot + "/breeze/",
+				imageRoot = siteRoot + "/Content/images/",
+				appJs = siteRoot + "/App/main",
+				scriptCache = scriptCache,
+				debug = debug,
+				participantGuid = guid
+			};
 
 			ViewBag.SiteConfig = config;
 

@@ -31,5 +31,8 @@ namespace Writer.Models
 
 		[DataMember]
 		public string SimaExperience { get; set; }
+
+		[DataMember]
+		public bool Completed { get; set; }
 	}
 }

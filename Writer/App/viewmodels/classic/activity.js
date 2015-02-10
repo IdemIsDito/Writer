@@ -96,7 +96,7 @@
 			}
 		};
 		this.complete = function () {
-			this.activity().Completed(true);
+			globals.participant().Completed(true);
 			context.saveChanges();
 		};
 		this.newStory = function () {

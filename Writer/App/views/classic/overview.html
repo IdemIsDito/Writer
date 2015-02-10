@@ -1,14 +1,13 @@
 ﻿<div data-bind="with: activity">
-	<h4>Titel van de activiteit:</h4>
-	<p data-bind="text: Title"></p>
+	<h2 data-bind="text: Title"></h2>
 	<h4>Korte samenvatting van de activiteit:</h4>
-	<p data-bind="text: Summary"></p>
+	<p class="text-justify" data-bind="text: Summary"></p>
 	<h4>Hoe kwam u ertoe deze activiteit te verrichten, hoe kwam uw deelname tot stand?</h4>
-	<p data-bind="text: Initiation"></p>
+	<p class="text-justify" data-bind="text: Initiation"></p>
 	<h4>Hoe heeft u het aangepakt, wat deed u precies, wat zei u, wat dacht u?</h4>
-	<p data-bind="text: Proceedings"></p>
+	<p class="text-justify" data-bind="text: Proceedings"></p>
 	<h4>Wat maakte deze activiteit plezierig voor u? Wat precies gaf u een gevoel van tevredenheid?</h4>
-	<p data-bind="text: Satisfaction"></p>
+	<p class="text-justify" data-bind="text: Satisfaction"></p>
 </div>
 <div class="btn-toolbar">
 	<button class="btn btn-default pull-right" data-bind="click: complete">

@@ -28,8 +28,5 @@ namespace Writer.Models
 		[DataMember]
 		public string Satisfaction { get; set; }
 
-		[DataMember]
-		public bool Completed { get; set; }
-
 	}
 }
