@@ -2,3 +2,9 @@
 	font-size: 16px;
 	line-height: 2em;
 }
+p {
+	margin-bottom: 20px;
+}
+.form-group-lg textarea.form-control {
+	height: auto;
+}

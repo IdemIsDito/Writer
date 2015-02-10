@@ -1,43 +1,43 @@
 ﻿<div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 			<h1 class="page-header text-center">Demografische gegevens</h1>
 			<p></p>
 		</div>
 	</div>
 	<div class="row" data-bind="css : { 'animated fadeIn' : participant }">
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 			<form>
 				<fieldset data-bind="with: participant">
-					<div class="form-group" data-bind="validationElement: Age">
+					<div class="form-group form-group-lg" data-bind="validationElement: Age">
 						<label class="control-label">Wat is uw leeftijd?</label>
-						<input type="number" class="form-control" data-bind="value: Age"/>
+						<input type="number" class="form-control" data-bind="value: Age" />
 					</div>
-					<div class="form-group" data-bind="validationElement: Gender">
+					<div class="form-group form-group-lg" data-bind="validationElement: Gender">
 						<label class="control-label">Wat is uw geslacht?</label>
 						<select class="form-control" data-bind="options: $parent.genderOptions, optionsCaption: '[ Maak een keuze ]', value: Gender"></select>
 					</div>
-					<div class="form-group" data-bind="validationElement: MotherLanguageDutch">
+					<div class="form-group form-group-lg" data-bind="validationElement: MotherLanguageDutch">
 						<label class="control-label">Is Nederlands uw moedertaal?</label>
 						<select class="form-control" data-bind="options: ['Ja', 'Nee'], optionsCaption: '[ Maak een keuze ]', value: MotherLanguageDutch"></select>
 					</div>
-					<div class="form-group" data-bind="validationElement: EducationCompleted">
+					<div class="form-group form-group-lg" data-bind="validationElement: EducationCompleted">
 						<label class="control-label">Wat is uw hoogst afgeronde opleiding?</label>
 						<select class="form-control" data-bind="options: $parent.educationCompletedOptions, optionsCaption: '[ Maak een keuze ]', value: EducationCompleted"></select>
 					</div>
-					<div class="form-group" data-bind="visible: $parent.EducationCompletedIsDifferent, validationElement: EducationCompletedDifferent">
+					<div class="form-group form-group-lg" data-bind="visible: $parent.EducationCompletedIsDifferent, validationElement: EducationCompletedDifferent">
 						<label class="control-label">Namelijk:</label>
 						<input class="form-control" data-bind="value: EducationCompletedDifferent" />
 					</div>
-					<div class="form-group" data-bind="validationElement: SimaExperience">
+					<div class="form-group form-group-lg" data-bind="validationElement: SimaExperience">
 						<label class="control-label">Heeft u ervaring met SIMA?</label>
 						<select class="form-control" data-bind="options: ['Ja', 'Nee'], optionsCaption: '[ Maak een keuze ]', value: SimaExperience"></select>
 					</div>
 				</fieldset>
 			</form>
 			<div class="btn-toolbar">
-				<button class="btn btn-default pull-right" data-style="expand-right" data-bind="click: next">
-					Next
+				<button class="btn btn-default btn-lg pull-right" data-style="expand-right" data-bind="click: next">
+					Volgende
 				</button>
 			</div>
 		</div>
