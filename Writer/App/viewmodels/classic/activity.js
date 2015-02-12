@@ -51,15 +51,13 @@
 		};
 
 		this.prev = function () {
-			if (this.stepIsValid()) {
-				context.saveChanges()
-					.then(function () {
-						self.activeView(self.getChildView('prev'));
-					})
-					.fail(function (error) {
-						logger.logError('Error while navigate prev', error, 'classic.js-prev', true);
-					});
-			}
+			context.saveChanges()
+				.then(function () {
+					self.activeView(self.getChildView('prev'));
+				})
+				.fail(function (error) {
+					logger.logError('Error while navigate prev', error, 'classic.js-prev', true);
+				});
 		};
 
 		this.next = function () {
