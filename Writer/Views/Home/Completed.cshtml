@@ -1,31 +1,34 @@
 ﻿@using System.Web.Optimization
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>SIMA - Writer</title>
-        
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="format-detection" content="telephone=no"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <link rel="apple-touch-startup-image" href="~/Content/images/ios-startup-image-landscape.png" media="(orientation:landscape)" />
-        <link rel="apple-touch-startup-image" href="~/Content/images/ios-startup-image-portrait.png" media="(orientation:portrait)" />
-        <link rel="apple-touch-icon" href="~/Content/images/icon.png"/>
-        @Styles.Render("~/Content/css")
-    </head>
-	<body>
-		<img class="img-responsive" src="@Url.Content("~/Content/images/completed-img.jpg")" title="Deze inzending is al afgerond." />
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-					<h1 class="page-header">Deze inzending is al afgerond.</h1>
-					<p>De inzending kan niet meer worden gewijzigd. Heb je nog geen inzending gedaan?</p>
-					<a class="btn btn-default" href="@(ViewBag.SiteRoot)">Start hier!</a>
-				</div>
+<head>
+	<title>SIMA - Writer</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/Content/images/favicon.ico")">
+	<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png">
+	@Styles.Render("~/Content/css")
+</head>
+<body>
+	<img class="img-responsive" src="@Url.Content("~/Content/images/completed-img.jpg")" title="Deze inzending is al afgerond." />
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<h1 class="page-header">Deze inzending is al afgerond.</h1>
+				<p>De inzending kan niet meer worden gewijzigd. Heb je nog geen inzending gedaan?</p>
+				<a class="btn btn-default" href="@(ViewBag.SiteRoot)">Start hier!</a>
 			</div>
 		</div>
-	</body>
+	</div>
+</body>
 </html>

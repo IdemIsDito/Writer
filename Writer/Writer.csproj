@@ -183,6 +183,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="apple-touch-icon-114x114-precomposed.png" />
+    <Content Include="apple-touch-icon-120x120-precomposed.png" />
+    <Content Include="apple-touch-icon-144x144-precomposed.png" />
+    <Content Include="apple-touch-icon-152x152-precomposed.png" />
+    <Content Include="apple-touch-icon-72x72-precomposed.png" />
+    <Content Include="apple-touch-icon-76x76-precomposed.png" />
+    <Content Include="apple-touch-icon-precomposed.png" />
     <Content Include="App\services\globals.js" />
     <Content Include="App\main.js" />
     <Content Include="App\services\context.js" />
@@ -218,10 +225,8 @@
     <Content Include="Content\durandal.css" />
     <Content Include="Content\images\404-img.jpg" />
     <Content Include="Content\images\completed-img.jpg" />
+    <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\welcome-img.jpg" />
-    <Content Include="Content\images\icon.png" />
-    <Content Include="Content\images\ios-startup-image-landscape.png" />
-    <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\ladda-themeless.css" />
     <Content Include="Content\ladda-themeless.min.css" />
     <Content Include="Content\ladda.css" />
