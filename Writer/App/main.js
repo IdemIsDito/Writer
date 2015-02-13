@@ -59,6 +59,9 @@ define([
 	app.configurePlugins({
 		router: true,
 		dialog: true,
+		widget : {
+			kinds: ['likert']
+		}
 	});
 
 	context.initialize()

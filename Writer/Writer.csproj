@@ -202,6 +202,7 @@
     <Content Include="App\viewmodels\enhanced\story.js" />
     <Content Include="App\viewmodels\classic\activity.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\thanks.js" />
     <Content Include="App\viewmodels\welcome.js" />
     <Content Include="App\views\404.html" />
     <Content Include="App\views\experience.html" />
@@ -214,9 +215,12 @@
     <Content Include="App\views\demographics.html" />
     <Content Include="App\views\enhanced\instructions.html" />
     <Content Include="App\views\enhanced\story.html" />
+    <Content Include="App\views\thanks.html" />
     <Content Include="App\views\welcome.html" />
     <Content Include="App\views\classic\activity.html" />
     <Content Include="App\views\shell.html" />
+    <Content Include="App\widgets\likert\view.html" />
+    <Content Include="App\widgets\likert\viewmodel.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\app.css" />
@@ -225,10 +229,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\durandal.css" />
-    <Content Include="Content\images\404-img.jpg" />
-    <Content Include="Content\images\completed-img.jpg" />
+    <Content Include="Content\images\404.jpg" />
+    <Content Include="Content\images\completed.jpg" />
     <Content Include="Content\images\favicon.ico" />
-    <Content Include="Content\images\welcome-img.jpg" />
+    <Content Include="Content\images\thanks.jpg" />
+    <Content Include="Content\images\welcome.jpg" />
     <Content Include="Content\ladda-themeless.css" />
     <Content Include="Content\ladda-themeless.min.css" />
     <Content Include="Content\ladda.css" />

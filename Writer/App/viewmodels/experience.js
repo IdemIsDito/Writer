@@ -16,7 +16,8 @@
 
 		this.participant().InstructionClear.extend({required: { message: "Dit is een verplicht veld." } });
 		this.participant().InstructionEffective.extend({ required: { message: "Dit is een verplicht veld." } });
-		if(this.participant().ActivityType() === "Enhanced") {
+
+		if (this.participant().ActivityType() === "Enhanced") {
 			this.participant().FeedbackClear.extend({ required: { message: "Dit is een verplicht veld." } });
 			this.participant().FeedbackEffective.extend({ required: { message: "Dit is een verplicht veld." } });
 		}
@@ -35,7 +36,8 @@
 		this.complete = function () {
 			if (this.isValid()) {
 				self.participant().Completed(true);
-				context.saveChanges();
+				context.saveChanges()
+					.then(router.navigate("#/thanks"));
 			}
 		};
 
