@@ -17,29 +17,29 @@ namespace Writer.Controllers
 
 			var storyTypes = new List<string>
 			{
-				"ClassicStories",
-				"EnhancedStories"
+				"Classic",
+				"Enhanced"
 			};
 
 			var classicCount =
 				_context.Context.Participants
-					.Count(x => x.StoryType == "ClassicStories");
+					.Count(x => x.ActivityType == "Classic");
 
 			var enhancedCount =
 				_context.Context.Participants
-					.Count(x => x.StoryType == "EnhancedStories");
+					.Count(x => x.ActivityType == "Enhanced");
 
 			var storyType =
 				classicCount == enhancedCount
 					? storyTypes.OrderBy(x => random.Next()).First()
 					: classicCount > enhancedCount
-						? "EnhancedStories"
-						: "ClassicStories";
+						? "Enhanced"
+						: "Classic";
 
 			var participant = new Participant
 			{
 				Guid = Guid.NewGuid(),
-				StoryType = storyType,
+				ActivityType = storyType,
 			};
 			_context.Context.Participants.Add(participant);
 			_context.Context.SaveChanges();

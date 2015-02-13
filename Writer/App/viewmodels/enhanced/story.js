@@ -21,7 +21,7 @@
 		};
 		this.activate = function (id) {
 			if (id) {
-				context.getClassicStory(id)
+				context.getEnhancedActivityByParticipant(id)
 					.then(function (data) {
 						self.story(data.results[0]);
 						logger.logSuccess('Succesful activation', data, 'enhanced.js-activate', false);
@@ -30,7 +30,7 @@
 					});
 
 			} else {
-				self.story(context.createClassicStory());
+				self.story(context.enhancedActivity());
 			}
 		};
 		this.bindingComplete = function (view) {
@@ -66,8 +66,8 @@
 		this.complete = function () {
 			logger.logInfo('Completed', null, 'enhanced.js-complete', true);
 		};
-		this.newStory = function () {
-			context.newStory();
+		this.newActivity = function () {
+			context.newActivity();
 		};
 	};
 	return vm;

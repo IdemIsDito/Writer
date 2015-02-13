@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace Writer.Models
 {
 	[DataContract]
-	public class ClassicStory : AppEntity
+	public class ClassicActivity : AppEntity
 	{
 		[DataMember]
 		public int ParticipantId { get; set; }

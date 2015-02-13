@@ -1,0 +1,124 @@
+﻿<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+			<h1 class="page-header text-center">Uw ervaringen</h1>
+			<p></p>
+		</div>
+	</div>
+	<div class="row" data-bind="css : { 'animated fadeIn' : participant }">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+			<form>
+				<fieldset data-bind="with: participant">
+					<div class="form-group form-group-lg" data-bind="validationElement: InstructionClear">
+						<label class="control-label">Waren de instructies duidelijk?</label>
+						<div class="btn-group btn-group-justified" data-toggle="buttons">
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionClear" value="1" data-bind="radioButtonGroupChecked: InstructionClear"> 1
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionClear" value="2" data-bind="radioButtonGroupChecked: InstructionClear"> 2
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionClear" value="3" data-bind="radioButtonGroupChecked: InstructionClear"> 3
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionClear" value="4" data-bind="radioButtonGroupChecked: InstructionClear"> 4
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionClear" value="5" data-bind="radioButtonGroupChecked: InstructionClear"> 5
+							</label>
+						</div>
+					</div>
+					<div class="form-group form-group-lg" data-bind="validationElement: InstructionEffective">
+						<label class="control-label">Waren de instructies effectief?</label>
+						<div class="btn-group btn-group-justified" data-toggle="buttons">
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionEffective" value="1" data-bind="radioButtonGroupChecked: InstructionEffective"> 1
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionEffective" value="2" data-bind="radioButtonGroupChecked: InstructionEffective"> 2
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionEffective" value="3" data-bind="radioButtonGroupChecked: InstructionEffective"> 3
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionEffective" value="4" data-bind="radioButtonGroupChecked: InstructionEffective"> 4
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="InstructionEffective" value="5" data-bind="radioButtonGroupChecked: InstructionEffective"> 5
+							</label>
+						</div>
+					</div>
+					<div data-bind="if: ActivityType() === 'Enhanced'">
+						<div class="form-group form-group-lg" data-bind="validationElement: FeedbackClear">
+							<label class="control-label">Was de feedback duidelijk?</label>
+							<div class="btn-group btn-group-justified" data-toggle="buttons">
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackClear" value="1" data-bind="radioButtonGroupChecked: FeedbackClear"> 1
+								</label>
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackClear" value="2" data-bind="radioButtonGroupChecked: FeedbackClear"> 2
+								</label>
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackClear" value="3" data-bind="radioButtonGroupChecked: FeedbackClear"> 3
+								</label>
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackClear" value="4" data-bind="radioButtonGroupChecked: FeedbackClear"> 4
+								</label>
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackClear" value="5" data-bind="radioButtonGroupChecked: FeedbackClear"> 5
+								</label>
+							</div>
+						</div>
+						<div class="form-group form-group-lg" data-bind="validationElement: FeedbackEffective">
+							<label class="control-label">Was de feedback effectief?</label>
+							<div class="btn-group btn-group-justified" data-toggle="buttons">
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackEffective" value="1" data-bind="radioButtonGroupChecked: FeedbackEffective"> 1
+								</label>
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackEffective" value="2" data-bind="radioButtonGroupChecked: FeedbackEffective"> 2
+								</label>
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackEffective" value="3" data-bind="radioButtonGroupChecked: FeedbackEffective"> 3
+								</label>
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackEffective" value="4" data-bind="radioButtonGroupChecked: FeedbackEffective"> 4
+								</label>
+								<label class="btn btn-default btn-lg">
+									<input type="radio" name="feedbackEffective" value="5" data-bind="radioButtonGroupChecked: FeedbackEffective"> 5
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group form-group-lg" data-bind="validationElement: GoodActivity">
+						<label class="control-label">Vind je dat je een goed verhaal heb geschreven?</label>
+						<div class="btn-group btn-group-justified" data-toggle="buttons">
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="GoodActivity" value="1" data-bind="radioButtonGroupChecked: GoodActivity"> 1
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="GoodActivity" value="2" data-bind="radioButtonGroupChecked: GoodActivity"> 2
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="GoodActivity" value="3" data-bind="radioButtonGroupChecked: GoodActivity"> 3
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="GoodActivity" value="4" data-bind="radioButtonGroupChecked: GoodActivity"> 4
+							</label>
+							<label class="btn btn-default btn-lg">
+								<input type="radio" name="GoodActivity" value="5" data-bind="radioButtonGroupChecked: GoodActivity"> 5
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<div class="btn-toolbar">
+				<button class="btn btn-default btn-lg pull-right" data-style="expand-right" data-bind="click: complete">
+					Volgende
+				</button>
+			</div>
+		</div>
+	</div>
+
+</div>

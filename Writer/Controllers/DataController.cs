@@ -29,16 +29,16 @@ namespace Writer.Controllers
 		}
 
 		[HttpGet]
-		public IQueryable<ClassicStory> ClassicStories()
+		public IQueryable<ClassicActivity> ClassicActivities()
 		{
 			return
-				_context.Context.ClassicStories;
+				_context.Context.ClassicActivities;
 		}
 
 		[HttpGet]
-		public IQueryable<EnhancedStory> EnhancedStories()
+		public IQueryable<EnhancedActivity> EnhancedActivities()
 		{
-			return _context.Context.EnhancedStories;
+			return _context.Context.EnhancedActivities;
 		}
 
 		[HttpPost]

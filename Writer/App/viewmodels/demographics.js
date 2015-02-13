@@ -1,11 +1,9 @@
 ﻿define([
-	'breeze',
 	'plugins/router',
 	'services/context',
 	'services/globals',
 	'services/logger'
 ], function (
-	breeze,
 	router,
 	context,
 	globals,

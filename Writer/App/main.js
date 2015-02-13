@@ -34,6 +34,24 @@ define([
 		errorElementClass: 'has-error',
 		errorMessageClass: 'help-block',
 	});
+
+	ko.bindingHandlers.radioButtonGroupChecked = {
+		init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+			var value = valueAccessor();
+			var newValueAccessor = function () {
+				return {
+					change: function () {
+						value(element.value);
+					}
+				};
+			};
+			if ($(element).val() == ko.unwrap(valueAccessor())) {
+				$(element).closest('.btn').button('toggle');
+			}
+			ko.bindingHandlers.event.init(element, newValueAccessor, allBindingsAccessor, viewModel, bindingContext);
+		}
+	};
+
 	system.debug(globals.debug);
 
 	app.title = 'SIMA Writer';

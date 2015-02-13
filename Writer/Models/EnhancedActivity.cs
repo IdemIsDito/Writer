@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Writer.Models
 {
 	[DataContract]
-	public class EnhancedStory : AppEntity
+	public class EnhancedActivity : AppEntity
 	{
 		[DataMember]
 		public int ParticipantId { get; set; }

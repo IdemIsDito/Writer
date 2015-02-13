@@ -168,7 +168,7 @@
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\AppEntity.cs" />
-    <Compile Include="Models\EnhancedStory.cs" />
+    <Compile Include="Models\EnhancedActivity.cs" />
     <Compile Include="Models\Initializer.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Participant.cs" />
@@ -176,7 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ClassicStory.cs" />
+    <Compile Include="Models\ClassicActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +195,7 @@
     <Content Include="App\services\context.js" />
     <Content Include="App\services\logger.js" />
     <Content Include="App\viewmodels\404.js" />
+    <Content Include="App\viewmodels\experience.js" />
     <Content Include="App\viewmodels\classic\instructions.js" />
     <Content Include="App\viewmodels\demographics.js" />
     <Content Include="App\viewmodels\enhanced\instructions.js" />
@@ -203,6 +204,7 @@
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\viewmodels\welcome.js" />
     <Content Include="App\views\404.html" />
+    <Content Include="App\views\experience.html" />
     <Content Include="App\views\classic\title.html" />
     <Content Include="App\views\classic\initiation.html" />
     <Content Include="App\views\classic\satisfaction.html" />
@@ -248,6 +250,7 @@
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
     <Content Include="App\views\classic\instructions.html" />
+    <None Include="Properties\PublishProfiles\Thesis.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\durandal\activator.js" />
     <Content Include="Scripts\durandal\app.js" />

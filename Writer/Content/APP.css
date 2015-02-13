@@ -8,3 +8,10 @@ p {
 .form-group-lg textarea.form-control {
 	height: auto;
 }
+.btn, .form-control {
+	-webkit-border-radius: initial !important;
+	   -moz-border-radius: initial !important;
+	    -ms-border-radius: initial !important;
+	     -o-border-radius: initial !important;
+	        border-radius: initial !important;
+}

@@ -18,8 +18,9 @@
 	return {
 		initialize: initialize,
 		getParticipantByGuid: getParticipantByGuid,
-		createClassicStory: createClassicStory,
-		getClassicStoryByParticipant: getClassicStoryByParticipant,
+		createClassicActivity: createClassicActivity,
+		getClassicActivityByParticipant: getClassicActivityByParticipant,
+		hasChanges: hasChanges,
 		saveChanges: saveChanges
 	};
 	/* Private functions */
@@ -37,16 +38,20 @@
 		return manager.executeQuery(q);
 	}
 
-	function createClassicStory() {
-		return manager.createEntity('ClassicStory', {
+	function createClassicActivity() {
+		return manager.createEntity('ClassicActivity', {
 			ParticipantId: globals.participant().Id()
 		});
 	}
 
-	function getClassicStoryByParticipant() {
-		var q = breeze.EntityQuery.from("ClassicStories")
+	function getClassicActivityByParticipant() {
+		var q = breeze.EntityQuery.from("ClassicActivities")
 			.where("ParticipantId", "==", globals.participant().Id());
 		return manager.executeQuery(q);
+	}
+
+	function hasChanges() {
+		return manager.hasChanges();
 	}
 
 	function saveChanges() {

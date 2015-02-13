@@ -9,10 +9,7 @@ namespace Writer.Models
 		public Guid Guid { get; set; }
 
 		[DataMember]
-		public string StoryType { get; set; } //ClassicStories or EnhancedStories
-
-//		[DataMember]
-//		public int StoryId { get; set; }
+		public string ActivityType { get; set; } //ClassicActivity or EnhancedActivity
 
 		[DataMember]
 		public int? Age { get; set; }
@@ -31,6 +28,21 @@ namespace Writer.Models
 
 		[DataMember]
 		public string SimaExperience { get; set; }
+
+		[DataMember]
+		public int? InstructionClear { get; set; }
+		
+		[DataMember]
+		public int? InstructionEffective { get; set; }
+		
+		[DataMember]
+		public int? FeedbackClear { get; set; }
+
+		[DataMember]
+		public int? FeedbackEffective { get; set; }
+
+		[DataMember]
+		public int? GoodActivity { get; set; }
 
 		[DataMember]
 		public bool Completed { get; set; }

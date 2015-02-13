@@ -1,8 +1,12 @@
 ﻿define([
+	'durandal/app',
+	'plugins/router',
 	'services/globals',
 	'services/logger',
 	'services/context'
 ], function (
+	app,
+	router,
 	globals,
 	logger,
 	context
@@ -24,12 +28,12 @@
 			self.activeView(viewName);
 		};
 		this.activate = function () {
-			context.getClassicStoryByParticipant()
+			context.getClassicActivityByParticipant()
 				.then(function (data) {
 					if (data.results.length > 0) {
 						self.activity(data.results[0]);
 					} else {
-						self.activity(context.createClassicStory());
+						self.activity(context.createClassicActivity());
 					}
 					logger.logSuccess('Succesful activation', data, 'classic.js-activate', false);
 					self.initValidation();
@@ -56,7 +60,7 @@
 					self.activeView(self.getChildView('prev'));
 				})
 				.fail(function (error) {
-					logger.logError('Error while navigate prev', error, 'classic.js-prev', true);
+					logger.logError('Error while navigating prev', error, 'classic.js-prev', true);
 				});
 		};
 
@@ -94,11 +98,8 @@
 			}
 		};
 		this.complete = function () {
-			globals.participant().Completed(true);
-			context.saveChanges();
-		};
-		this.newStory = function () {
-			context.newStory();
+			context.saveChanges()
+				.then(router.navigate('#/experience'));
 		};
 	};
 	return vm;
