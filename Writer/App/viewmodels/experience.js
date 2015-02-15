@@ -35,12 +35,20 @@
 
 		this.complete = function () {
 			if (this.isValid()) {
+				var l = Ladda.create(event.target);
+				l.start();
 				self.participant().Completed(true);
 				context.saveChanges()
-					.then(router.navigate("#/thanks"));
+					.then(function () {
+						router.navigate('#/thanks');
+						l.stop();
+					})
+					.fail(function (error) {
+						logger.logError('Error while completing experience', error, 'experience.js-next', true);
+						l.stop();
+					});
 			}
 		};
-
 	};
 	return vm;
 });

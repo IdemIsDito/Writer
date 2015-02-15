@@ -54,24 +54,32 @@
 			return self.views[activeViewPos + directionInt];
 		};
 
-		this.prev = function () {
+		this.prev = function (bindingContext, event) {
+			var l = Ladda.create(event.target);
+			l.start();
 			context.saveChanges()
 				.then(function () {
 					self.activeView(self.getChildView('prev'));
+					l.stop();
 				})
 				.fail(function (error) {
 					logger.logError('Error while navigating prev', error, 'classic.js-prev', true);
+					l.stop();
 				});
 		};
 
-		this.next = function () {
+		this.next = function (bindingContext, event) {
 			if (this.stepIsValid()) {
+				var l = Ladda.create(event.target);
+				l.start();
 				context.saveChanges()
 					.then(function () {
 						self.activeView(self.getChildView('next'));
+						l.stop();
 					})
 					.fail(function (error) {
 						logger.logError('Error while navigating next', error, 'classic.js-next', true);
+						l.stop();
 					});
 			}
 		};
@@ -97,10 +105,19 @@
 					return validate(this.activity().Satisfaction);
 			}
 		};
-		this.complete = function () {
+		this.complete = function (bindingContext, event) {
+			var l = Ladda.create(event.target);
+			l.start();
 			this.activity().EndTime(new Date());
 			context.saveChanges()
-				.then(router.navigate('#/experience'));
+				.then(function () {
+					router.navigate('#/experience');
+					l.stop();
+				})
+				.fail(function (error) {
+					logger.logError('Error while navigating next', error, 'classic.js-next', true);
+					l.stop();
+				});
 		};
 	};
 	return vm;
