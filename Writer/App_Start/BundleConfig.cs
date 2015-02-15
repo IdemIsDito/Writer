@@ -20,6 +20,8 @@ namespace Writer
 					.Include("~/Scripts/jquery-{version}.js")
 					.Include("~/Scripts/knockout-{version}.js")
 					.Include("~/Scripts/knockout.validation.js")
+					.Include("~/Scripts/Q.js")
+					.Include("~/Scripts/breeze.debug.js")
 					.Include("~/Scripts/bootstrap.js")
 					.Include("~/Scripts/toastr.js")
 					.Include("~/Scripts/spin.js")

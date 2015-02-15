@@ -1,12 +1,14 @@
-﻿requirejs.config({
+﻿define('breeze', function () { return breeze; });
+define('Q', function () { return Q; });
+
+requirejs.config({
 	paths: {
 		'text': '../Scripts/text',
 		'durandal': '../Scripts/durandal',
 		'plugins': '../Scripts/durandal/plugins',
 		'transitions': '../Scripts/durandal/transitions',
-		'breeze': '../Scripts/breeze.debug',
-		'Q': '../Scripts/q'
-
+		'Q': 'empty:',//'../Scripts/q',
+		'breeze': 'empty:',//'../Scripts/breeze.debug',
 	},
 	urlArgs: scriptCache ? undefined : "bust=" + new Date().getTime()
 });
