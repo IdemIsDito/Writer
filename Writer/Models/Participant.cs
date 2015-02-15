@@ -15,6 +15,9 @@ namespace Writer.Models
 		public int? Age { get; set; }
 
 		[DataMember]
+		public string Email { get; set; }
+
+		[DataMember]
 		public string Gender { get; set; }
 
 		[DataMember]

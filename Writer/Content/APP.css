@@ -20,7 +20,7 @@ h2 {
 	line-height: 34px;
 }
 
-p {
+p.readable {
 	color: #333333;
 	font-family: Georgia, serif;
 	font-size: 18px;

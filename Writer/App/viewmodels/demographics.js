@@ -41,6 +41,7 @@
 				message: "U geeft aan ouder dan 100 te zijn? Dit is waarschijnlijk een typfout."
 			}
 		});
+		this.participant().Email.extend({ email: { message: "Voer een geldig email adres in." } });
 		this.participant().Gender.extend({ required: { message: "Dit is een verplicht veld." } });
 		this.participant().MotherLanguageDutch.extend({ required: { message: "Dit is een verplicht veld." } });
 		this.participant().EducationCompleted.extend({ required: { message: "Dit is een verplicht veld." } });

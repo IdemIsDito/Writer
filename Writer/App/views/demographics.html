@@ -10,19 +10,19 @@
 			<form>
 				<fieldset data-bind="with: participant">
 					<div class="form-group form-group-lg" data-bind="validationElement: Age">
-						<label class="control-label">Wat is uw leeftijd?</label>
+						<label class="control-label">Wat is je leeftijd?</label>
 						<input type="number" class="form-control" data-bind="value: Age" />
 					</div>
 					<div class="form-group form-group-lg" data-bind="validationElement: Gender">
-						<label class="control-label">Wat is uw geslacht?</label>
+						<label class="control-label">Wat is je geslacht?</label>
 						<select class="form-control" data-bind="options: $parent.genderOptions, optionsCaption: '[ Maak een keuze ]', value: Gender"></select>
 					</div>
 					<div class="form-group form-group-lg" data-bind="validationElement: MotherLanguageDutch">
-						<label class="control-label">Is Nederlands uw moedertaal?</label>
+						<label class="control-label">Is Nederlands je moedertaal?</label>
 						<select class="form-control" data-bind="options: ['Ja', 'Nee'], optionsCaption: '[ Maak een keuze ]', value: MotherLanguageDutch"></select>
 					</div>
 					<div class="form-group form-group-lg" data-bind="validationElement: EducationCompleted">
-						<label class="control-label">Wat is uw hoogst afgeronde opleiding?</label>
+						<label class="control-label">Wat is je hoogst afgeronde opleiding?</label>
 						<select class="form-control" data-bind="options: $parent.educationCompletedOptions, optionsCaption: '[ Maak een keuze ]', value: EducationCompleted"></select>
 					</div>
 					<div class="form-group form-group-lg" data-bind="visible: $parent.EducationCompletedIsDifferent, validationElement: EducationCompletedDifferent">
@@ -32,6 +32,11 @@
 					<div class="form-group form-group-lg" data-bind="validationElement: SimaExperience">
 						<label class="control-label">Heeft u ervaring met SIMA?</label>
 						<select class="form-control" data-bind="options: ['Ja', 'Nee'], optionsCaption: '[ Maak een keuze ]', value: SimaExperience"></select>
+					</div>
+					<p class="text-justify"> Om mee te kunnen doen aan de verloting van de bol.com waardenbonnen dien je een e-mailadres achter te laten. Anders weet ik natuurlijk niet aan wie ik de cadeaubon moet overhandigen. Dit is echter niet verplicht.</p> 
+					<div class="form-group form-group-lg" data-bind="validationElement: Email">
+						<label class="control-label">Je e-mailadres:</label>
+						<input type="email" class="form-control" data-bind="value: Email" />
 					</div>
 				</fieldset>
 			</form>
