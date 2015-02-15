@@ -71,15 +71,17 @@
 			return true;
 		};
 
-		this.next = function () {
+		this.next = function (bindingContext, event) {
 			if (this.isValid()) {
+				var l = Ladda.create(event.target);
+					l.start();
 				context.saveChanges()
-					.then(function () {
+					.then(function ()  {
 						router.navigate('#/instructions');
 						logger.logSuccess('Succesful save', null, 'demograpics.js-next', false);
 					}).fail(function (error) {
 						logger.logError('Error while saving', error, 'demograpics.js-next', true);
-					});
+					}).fin(l.stop());
 			}
 		};
 	};

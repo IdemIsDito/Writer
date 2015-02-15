@@ -85,7 +85,7 @@ namespace Writer.Controllers
 				ViewBag.SiteRoot = siteRoot;
 				return View("Completed");
 			}
-			
+
 			var config = new Config
 			{
 				siteRoot = siteRoot,
