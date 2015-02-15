@@ -190,7 +190,6 @@
     <Content Include="apple-touch-icon-72x72-precomposed.png" />
     <Content Include="apple-touch-icon-76x76-precomposed.png" />
     <Content Include="apple-touch-icon-precomposed.png" />
-    <Content Include="App\main-built.js" />
     <Content Include="App\services\globals.js" />
     <Content Include="App\main.js" />
     <Content Include="App\services\context.js" />
@@ -231,8 +230,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\durandal.css" />
     <Content Include="Content\images\404.jpg" />
+    <Content Include="Content\images\pen.png" />
     <Content Include="Content\images\completed.jpg" />
     <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\instructions.jpg" />
     <Content Include="Content\images\thanks.jpg" />
     <Content Include="Content\images\welcome.jpg" />
     <Content Include="Content\ladda-themeless.css" />

@@ -98,6 +98,7 @@
 			}
 		};
 		this.complete = function () {
+			this.activity().EndTime(new Date());
 			context.saveChanges()
 				.then(router.navigate('#/experience'));
 		};

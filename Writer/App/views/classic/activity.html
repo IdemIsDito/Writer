@@ -1,7 +1,11 @@
 ﻿<div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-			<h1 class="page-header text-center">Activiteit beschrijven</h1>
+			<div class="page-header">
+				<h1 class="pull-left">Activiteit beschrijven</h1> 
+				<h2 class="pull-right" data-bind="text: views.indexOf(activeView()) + 1 + '/' + views.length"></h2>
+				<div class="clearfix"></div>
+			</div>
 		</div>
 	</div>
 	<div class="row">

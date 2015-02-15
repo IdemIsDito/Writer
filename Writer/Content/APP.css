@@ -1,17 +1,45 @@
 ﻿body {
 	font-size: 16px;
-	line-height: 2em;
+	margin-bottom: 100px;
 }
+
+h1 {
+	color: #333333;
+	font-family: 'Bitter', serif;
+	font-size: 50px;
+	font-weight: normal;
+	line-height: 54px;
+	margin: 0 0 54px;
+}
+
+h2 {
+	color: #333333;
+	font-family: 'Bitter', serif;
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 34px;
+}
+
 p {
-	margin-bottom: 20px;
+	color: #333333;
+	font-family: Georgia, serif;
+	font-size: 18px;
+	line-height: 28px;
+	margin: 0 0 28px;
 }
-.form-group-lg textarea.form-control {
-	height: auto;
-}
+
+
+
 .btn, .form-control {
 	-webkit-border-radius: initial !important;
-	   -moz-border-radius: initial !important;
-	    -ms-border-radius: initial !important;
-	     -o-border-radius: initial !important;
-	        border-radius: initial !important;
+	-moz-border-radius: initial !important;
+	-ms-border-radius: initial !important;
+	-o-border-radius: initial !important;
+	border-radius: initial !important;
 }
+
+.form-group-lg textarea.form-control { height: auto; }
+
+.splash .page-header { border: none; }
+
+.page-header h1 { margin: 0; }

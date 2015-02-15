@@ -40,6 +40,7 @@
 
 	function createClassicActivity() {
 		return manager.createEntity('ClassicActivity', {
+			StartTime : new Date(),
 			ParticipantId: globals.participant().Id()
 		});
 	}

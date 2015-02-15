@@ -76,7 +76,7 @@
 				var l = Ladda.create(event.target);
 					l.start();
 				context.saveChanges()
-					.then(function ()  {
+					.then(function () {
 						router.navigate('#/instructions');
 						logger.logSuccess('Succesful save', null, 'demograpics.js-next', false);
 					}).fail(function (error) {

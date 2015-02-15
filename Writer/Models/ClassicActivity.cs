@@ -28,5 +28,10 @@ namespace Writer.Models
 		[DataMember]
 		public string Satisfaction { get; set; }
 
+		[DataMember]
+		public DateTime? StartTime { get; set; }
+
+		[DataMember]
+		public DateTime? EndTime { get; set; }
 	}
 }
