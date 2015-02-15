@@ -30,7 +30,11 @@
 
 		this.participant().Age.extend({
 			required: {
-				 message: "Dit is een verplicht veld."
+				message: "Dit is een verplicht veld."
+			},
+			pattern: {
+				message: 'Geef uw leetijd aan met een getal.',
+				params: '[0-9]'
 			},
 			min: {
 				params: 18,
@@ -39,7 +43,7 @@
 			max: {
 				params: 100,
 				message: "U geeft aan ouder dan 100 te zijn? Dit is waarschijnlijk een typfout."
-			}
+			},
 		});
 		this.participant().Email.extend({ email: { message: "Voer een geldig email adres in." } });
 		this.participant().Gender.extend({ required: { message: "Dit is een verplicht veld." } });
@@ -78,11 +82,13 @@
 					l.start();
 				context.saveChanges()
 					.then(function () {
+						l.stop();
 						router.navigate('#/instructions');
 						logger.logSuccess('Succesful save', null, 'demograpics.js-next', false);
 					}).fail(function (error) {
+						l.stop();
 						logger.logError('Error while saving', error, 'demograpics.js-next', true);
-					}).fin(l.stop());
+					}).fin();
 			}
 		};
 	};
