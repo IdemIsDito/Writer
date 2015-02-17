@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace Writer.Models
@@ -13,9 +14,31 @@ namespace Writer.Models
 		public Participant Participant { get; set; }
 
 		[DataMember]
-		public string First { get; set; }
+		public string Title { get; set; }
 
 		[DataMember]
-		public string Second { get; set; }
+		public string Situation { get; set; }
+
+		[DataMember]
+		public int Persons  { get; set; } //0 = NULL; 1 = Ja; 2 = Nee
+
+		[DataMember]
+		public string InvolvedPersons { get; set; }
+
+		[DataMember]
+		public string Initiation { get; set; }
+
+		[DataMember]
+		public string Proceedings { get; set; }
+		
+		[DataMember]
+		public string Satisfaction { get; set; }
+
+		[DataMember]
+		public DateTime? StartTime { get; set; }
+
+		[DataMember]
+		public DateTime? EndTime { get; set; }
+
 	}
 }

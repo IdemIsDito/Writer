@@ -1,0 +1,24 @@
+﻿<form>
+	<fieldset data-bind="with: activity">
+		<div class="form-group form-group-lg" data-bind="validationElement: Persons">
+			<h2 class="control-label">Waren er andere personen betrokken bij de activiteit</h2>
+			<div class="btn-group btn-group-justified" data-toggle="buttons">
+				<label class="btn ladda-button btn-primary btn-lg">
+					<input type="radio" name="person" value="1" data-bind="radioButtonGroupChecked: Persons"> Ja
+				</label>
+				<label class="btn ladda-button btn-primary btn-lg">
+					<input type="radio" name="person" value="2" data-bind="radioButtonGroupChecked: Persons"> Nee
+				</label>
+			</div>
+			<input type="hidden" data-bind="value: Persons">
+		</div>
+	</fieldset>
+</form>
+<div class="btn-toolbar">
+	<button class="btn ladda-button btn-default btn-lg pull-left" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: prev">
+		Vorige
+	</button>
+	<button class="btn ladda-button btn-default btn-lg pull-right" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: next">
+		Volgende
+	</button>
+</div>

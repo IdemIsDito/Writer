@@ -35,10 +35,10 @@
 					} else {
 						self.activity(context.createClassicActivity());
 					}
-					logger.logSuccess('Succesful activation', data, 'classic.js-activate', false);
+					logger.logSuccess('Succesful activation', data, 'classic/activity.js-activate', false);
 					self.initValidation();
 				}).fail(function (error) {
-					logger.logError('Error while activate', error, 'classic.js-activate', true);
+					logger.logError('Error while activate', error, 'classic/activity.js-activate', true);
 				});
 		};
 		this.initValidation = function () {
@@ -63,7 +63,7 @@
 					l.stop();
 				})
 				.fail(function (error) {
-					logger.logError('Error while navigating prev', error, 'classic.js-prev', true);
+					logger.logError('Error while navigating prev', error, 'classic/activity.js-prev', true);
 					l.stop();
 				});
 		};
@@ -78,7 +78,7 @@
 						l.stop();
 					})
 					.fail(function (error) {
-						logger.logError('Error while navigating next', error, 'classic.js-next', true);
+						logger.logError('Error while navigating next', error, 'classic/activity.js-next', true);
 						l.stop();
 					});
 			}
@@ -101,6 +101,7 @@
 					return validate(this.activity().Initiation);
 				case 'classic/proceedings':
 					return validate(this.activity().Proceedings);
+
 				case 'classic/satisfaction':
 					return validate(this.activity().Satisfaction);
 			}
@@ -115,7 +116,7 @@
 					l.stop();
 				})
 				.fail(function (error) {
-					logger.logError('Error while navigating next', error, 'classic.js-next', true);
+					logger.logError('Error while navigating next', error, 'classic/activity.js-next', true);
 					l.stop();
 				});
 		};

@@ -16,12 +16,14 @@
 		initialized = false;
 
 	return {
-		initialize: initialize,
-		getParticipantByGuid: getParticipantByGuid,
-		createClassicActivity: createClassicActivity,
-		getClassicActivityByParticipant: getClassicActivityByParticipant,
-		hasChanges: hasChanges,
-		saveChanges: saveChanges
+		initialize : initialize,
+		getParticipantByGuid : getParticipantByGuid,
+		createClassicActivity : createClassicActivity,
+		getClassicActivityByParticipant : getClassicActivityByParticipant,
+		createEnhancedActivity : createEnhancedActivity,
+		getEnhancedActivityByParticipant : getEnhancedActivityByParticipant,
+		hasChanges : hasChanges,
+		saveChanges : saveChanges
 	};
 	/* Private functions */
 	function initialize() {
@@ -47,6 +49,19 @@
 
 	function getClassicActivityByParticipant() {
 		var q = breeze.EntityQuery.from("ClassicActivities")
+			.where("ParticipantId", "==", globals.participant().Id());
+		return manager.executeQuery(q);
+	}
+
+	function createEnhancedActivity() {
+		return manager.createEntity('EnhancedActivity', {
+			StartTime: new Date(),
+			ParticipantId: globals.participant().Id()
+		});
+	}
+
+	function getEnhancedActivityByParticipant() {
+		var q = breeze.EntityQuery.from("EnhancedActivities")
 			.where("ParticipantId", "==", globals.participant().Id());
 		return manager.executeQuery(q);
 	}

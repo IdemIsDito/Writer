@@ -93,6 +93,7 @@ namespace Writer.Controllers
 				breezeRoot = siteRoot + "/breeze/",
 				imageRoot = siteRoot + "/Content/images/",
 				appJs = siteRoot + "/App/main",
+				//appJs = debug ? siteRoot + "/App/main" : siteRoot + "/App/main-build" ,
 				scriptCache = scriptCache,
 				debug = debug,
 				participantGuid = guid

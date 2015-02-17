@@ -1,12 +1,10 @@
 ﻿define(function() {
 	var vm = function () {
 
-		this.name = '';
-		this.field = '';
+		this.involved = ko.observableArray;
 
 		this.activate = function (data) {
-			this.name = data.name;
-			this.field = data.field;
+			this.involved(data.involved);
 		};
 	};
 	return vm;

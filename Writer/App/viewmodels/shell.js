@@ -47,7 +47,6 @@
 			this.mapRouter();
 			return this.router.activate();
 		};
-
 		this.activate = function () {
 			context.getParticipantByGuid(globals.participantGuid)
 				.then(function (data) {

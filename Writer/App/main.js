@@ -1,5 +1,7 @@
-﻿define('breeze', function () { return breeze; });
+﻿define('jquery', function () { return jQuery; });
 define('Q', function () { return Q; });
+define('breeze', function () { return breeze; });
+define('knockout', ko);
 
 requirejs.config({
 	paths: {
@@ -7,14 +9,13 @@ requirejs.config({
 		'durandal': '../Scripts/durandal',
 		'plugins': '../Scripts/durandal/plugins',
 		'transitions': '../Scripts/durandal/transitions',
-		'Q': 'empty:',//'../Scripts/q',
-		'breeze': 'empty:',//'../Scripts/breeze.debug',
+		'jquery': 'empty:',
+		'Q': 'empty:',
+		'breeze': 'empty:',
+		'kockout': 'empty:',
 	},
 	urlArgs: scriptCache ? undefined : "bust=" + new Date().getTime()
 });
-
-define('jquery', function () { return jQuery; });
-define('knockout', ko);
 
 define([
 	'durandal/system',
@@ -62,7 +63,10 @@ define([
 		router: true,
 		dialog: true,
 		widget : {
-			kinds: ['likert']
+			kinds: [
+				'likert',
+				'persons'
+			]
 		}
 	});
 
