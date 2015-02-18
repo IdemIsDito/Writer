@@ -35,7 +35,7 @@ define([
 	ko.utils.extend(globals, config);
 	ko.validation.init({
 		errorElementClass: 'has-error',
-		errorMessageClass: 'help-block',
+		errorMessageClass: 'help-block'
 	});
 
 	ko.bindingHandlers.radioButtonGroupChecked = {
@@ -64,8 +64,7 @@ define([
 		dialog: true,
 		widget : {
 			kinds: [
-				'likert',
-				'persons'
+				'likert'
 			]
 		}
 	});

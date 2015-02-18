@@ -30,9 +30,20 @@
 		this.activeView = ko.observable(this.views[0]);
 
 		this.activateView = function (viewName) {
+			self.prepareView(viewName);
 			self.activeView(viewName);
 		};
-
+		this.prepareView = function (viewName) {
+			switch (viewName) {
+			case 'enhanced/involved-persons':
+				var ips = self.activity().InvolvedPersons();
+				if (ips.length === 0) {
+					ips.push(context.createInvolvedPerson(self.activity().Id()));
+					break;
+				}
+				break;
+			}
+		};
 		this.activate = function () {
 			context.getEnhancedActivityByParticipant()
 				.then(function (data) {
@@ -42,33 +53,31 @@
 						self.activity(context.createEnhancedActivity());
 					}
 					logger.logSuccess('Succesful activation', data, 'enhanced/activity.js-activate', false);
-					self.initValidation();
 				}).fail(function (error) {
 					logger.logError('Error while activate', error, 'enhanced/activity.js-activate', true);
 				});
 		};
 
-		this.initValidation = function () {
-			this.activity().Title.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Situation.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Persons.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().InvolvedPersons.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Initiation.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Proceedings.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Satisfaction.extend({ required: { message: "Dit is een verplicht veld." } });
-		};
 		this.getChildView = function (direction) {
 			var activeViewPos = self.views.indexOf(self.activeView()),
 				directionInt = direction === 'next' ? 1 : direction === 'skip-next' ? 2 : direction === 'skip-prev' ? -2 : -1;
 			return self.views[activeViewPos + directionInt];
 		};
-
+		this.addPerson = function () {
+			context.createInvolvedPerson(self.activity().Id());
+		};
+		this.removePerson = function (person) {
+			var ip = self.activity().InvolvedPersons,
+				personIndex = ip.indexOf(person);
+			ip.splice(personIndex, 1);
+			person.entityAspect.setDeleted();
+		};
 		this.prev = function (bindingContext, event) {
 			var l = Ladda.create(event.target);
 			l.start();
 			context.saveChanges()
 				.then(function () {
-					self.activeView(self.getChildView(self.whatIsPrev()));
+					self.activateView(self.getChildView(self.whatIsPrev()));
 					l.stop();
 				})
 				.fail(function (error) {
@@ -83,7 +92,7 @@
 				l.start();
 				context.saveChanges()
 					.then(function () {
-						self.activeView(self.getChildView(self.whatIsNext()));
+						self.activateView(self.getChildView(self.whatIsNext()));
 						l.stop();
 					})
 					.fail(function (error) {
@@ -126,9 +135,14 @@
 				return validate(this.activity().Situation);
 			case 'enhanced/persons':
 				return validate(this.activity().Persons);
-			case 'enhanced/involved-persons':
-				return true;
-				//TODO return validate(this.activity().InvolvedPersons);
+				case 'enhanced/involved-persons':
+					debugger;
+					var e = 0,
+						ips = this.activity().InvolvedPersons();
+					for (var j = 0; j < ips.length; j++) {
+						!validate(ips[j]) ? e++ : e=e;
+					}
+					return e > 0 ? false : true;
 			case 'enhanced/initiation':
 				return validate(this.activity().Initiation);
 			case 'enhanced/proceedings':

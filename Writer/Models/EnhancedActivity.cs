@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 using System.Runtime.Serialization;
+using System.Web.Optimization;
 
 namespace Writer.Models
 {
 	[DataContract]
 	public class EnhancedActivity : AppEntity
 	{
+	
 		[DataMember]
 		public int ParticipantId { get; set; }
 		
@@ -23,7 +28,7 @@ namespace Writer.Models
 		public int Persons  { get; set; } //0 = NULL; 1 = Ja; 2 = Nee
 
 		[DataMember]
-		public string InvolvedPersons { get; set; }
+		public ICollection<InvolvedPerson> InvolvedPersons { get; set; }
 
 		[DataMember]
 		public string Initiation { get; set; }

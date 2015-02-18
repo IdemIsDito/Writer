@@ -1,9 +1,29 @@
 ﻿<form>
 	<fieldset data-bind="with: activity">
-		<div class="form-group form-group-lg" data-bind="validationElement: InvolvedPersons">
+		<div class="form-group form-group-lg">
 			<h2 class="control-label">Wie waren dat?</h2>
-			<div data-bind="persons: { involved: InvolvedPersons() || [] }"></div>
-			<input type="hidden" data-bind="value: InvolvedPersons">
+			<div class="btn-toolbar">
+				<button class="btn btn-default pull-left" data-bind="click: $parent.addPerson">
+					Voeg een persoon toe
+				</button>
+			</div>
+			<div class="row" data-bind="foreach: InvolvedPersons">
+				<div class="col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading" data-bind="validationElement: Name">
+							<input class="form-control" placeholder="Naam" data-bind="value: Name" />
+						</div>
+						<div class="panel-body" data-bind="validationElement: Role">
+							<textarea rows="5" class="form-control" data-bind="value: Role" placeholder="Wat was zijn/haar rol ten opzichte van jouw?"></textarea>
+						</div>
+						<div class="panel-footer">
+							<button class="btn btn-danger btn-block" data-bind="click: $root.removePerson">
+								<span class="glyphicon glyphicon-trash"></span> Verwijder
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</fieldset>
 </form>

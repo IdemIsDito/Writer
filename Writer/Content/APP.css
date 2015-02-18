@@ -42,7 +42,7 @@ label.control-label {
 }
 
 
-.btn, .form-control {
+.btn, .form-control, .panel {
 	-webkit-border-radius: initial !important;
 	-moz-border-radius: initial !important;
 	-ms-border-radius: initial !important;
@@ -72,4 +72,8 @@ label.control-label {
 	margin: 10px 0;
 	padding: 10px 0;
 	border-top: 1px solid #EEE;
+}
+.btn-toolbar > .btn.pull-right, 
+.btn-toolbar > .btn.pull-left {
+	margin-left: 0;
 }

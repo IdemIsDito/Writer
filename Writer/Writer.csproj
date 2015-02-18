@@ -171,6 +171,7 @@
     <Compile Include="Models\EnhancedActivity.cs" />
     <Compile Include="Models\Initializer.cs" />
     <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\InvolvedPerson.cs" />
     <Compile Include="Models\Participant.cs" />
     <Compile Include="Models\WriterContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,8 +199,6 @@
     <Content Include="App\views\enhanced\proceedings.html" />
     <Content Include="App\views\enhanced\satisfaction.html" />
     <Content Include="App\views\enhanced\situation.html" />
-    <Content Include="App\widgets\persons\view.html" />
-    <Content Include="App\widgets\persons\viewmodel.js" />
     <Content Include="gulpfile.js" />
     <Content Include="App\services\globals.js" />
     <Content Include="App\main.js" />

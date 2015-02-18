@@ -12,6 +12,7 @@ namespace Writer.Models
 		public IDbSet<Participant> Participants { get; set; }
 		public IDbSet<ClassicActivity> ClassicActivities { get; set; }
 		public IDbSet<EnhancedActivity> EnhancedActivities { get; set; }
+		public IDbSet<InvolvedPerson> InvolvedPersons { get; set; }
 
 		public override int SaveChanges()
 		{

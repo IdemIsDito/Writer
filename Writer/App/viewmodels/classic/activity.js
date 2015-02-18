@@ -24,6 +24,7 @@
 		this.activity = ko.observable();
 
 		this.activeView = ko.observable(this.views[0]);
+
 		this.activateView = function (viewName) {
 			self.activeView(viewName);
 		};
@@ -36,17 +37,9 @@
 						self.activity(context.createClassicActivity());
 					}
 					logger.logSuccess('Succesful activation', data, 'classic/activity.js-activate', false);
-					self.initValidation();
 				}).fail(function (error) {
 					logger.logError('Error while activate', error, 'classic/activity.js-activate', true);
 				});
-		};
-		this.initValidation = function () {
-			this.activity().Title.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Summary.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Initiation.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Proceedings.extend({ required: { message: "Dit is een verplicht veld." } });
-			this.activity().Satisfaction.extend({ required: { message: "Dit is een verplicht veld." } });
 		};
 		this.getChildView = function (direction) {
 			var activeViewPos = self.views.indexOf(self.activeView()),
@@ -59,7 +52,7 @@
 			l.start();
 			context.saveChanges()
 				.then(function () {
-					self.activeView(self.getChildView('prev'));
+					self.activateView(self.getChildView('prev'));
 					l.stop();
 				})
 				.fail(function (error) {
@@ -74,7 +67,7 @@
 				l.start();
 				context.saveChanges()
 					.then(function () {
-						self.activeView(self.getChildView('next'));
+						self.activateView(self.getChildView('next'));
 						l.stop();
 					})
 					.fail(function (error) {
