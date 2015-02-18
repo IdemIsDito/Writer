@@ -19,6 +19,9 @@ namespace Writer.Models
 		public Participant Participant { get; set; }
 
 		[DataMember]
+		public int HasActivity { get; set; } //0 = NULL; 1 = Ja; 2 = Nee, help mij
+
+		[DataMember]
 		public string Title { get; set; }
 
 		[DataMember]

@@ -70,6 +70,7 @@
 	}
 
 	function eaInitializer(ea) {
+		ea.HasActivity.extend({ required: { message: "Dit is een verplicht veld." } });
 		ea.Title.extend({ required: { message: "Dit is een verplicht veld." } });
 		ea.Situation.extend({ required: { message: "Dit is een verplicht veld." } });
 		ea.Persons.extend({ required: { message: "Dit is een verplicht veld." } });

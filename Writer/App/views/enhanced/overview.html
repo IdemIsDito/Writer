@@ -4,7 +4,25 @@
 	<h3>Situatie</h3>
 	<p class="readable text-justify" data-bind="text: Situation"></p>
 	<h3>Personen</h3>
-	<p class="readable text-justify" data-bind="text: Persons"></p>
+	<div class="readable text-justify">
+		<span data-bind="text: Persons() === 1 ? '' : 'Er waren geen andere personen betrokken bij deze activiteit'"></span>
+		<div data-bind="if: InvolvedPersons().length > 0 ">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Naam</th>
+						<th>Rol ten opzichte van jou</th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach: InvolvedPersons">
+					<tr>
+						<td data-bind="text: Name"></td>
+						<td data-bind="text: Role"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 	<h3>Start</h3>
 	<p class="readable text-justify" data-bind="text: Initiation"></p>
 	<h3>Handelingen</h3>
@@ -12,7 +30,7 @@
 	<h3>Voldoening</h3>
 	<p class="readable text-justify" data-bind="text: Satisfaction"></p>
 </div>
-<div class="btn-toolbar hidden-print">
+<div class="btn-toolbar btn-toolbar-controls hidden-print">
 	<button class="btn ladda-button btn-default btn-lg pull-left" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: prev">
 		Vorige
 	</button>

@@ -14,6 +14,7 @@
 	var vm = function () {
 		var self = this;
 		this.views = [
+			'enhanced/has-activity',
 			'enhanced/imagine',
 			'enhanced/title',
 			'enhanced/situation',
@@ -67,10 +68,15 @@
 			context.createInvolvedPerson(self.activity().Id());
 		};
 		this.removePerson = function (person) {
-			var ip = self.activity().InvolvedPersons,
-				personIndex = ip.indexOf(person);
-			ip.splice(personIndex, 1);
-			person.entityAspect.setDeleted();
+			app.showMessage('Weet je zeker dat je deze persoon (<b>'+ person.Name() +'</b>) wilt verwijderen?', 'Weet je het zeker?', ['Ja', 'Nee'])
+				.then(function(result){
+				if (result == 'Ja') {
+					var ip = self.activity().InvolvedPersons,
+					personIndex = ip.indexOf(person);
+					ip.splice(personIndex, 1);
+					person.entityAspect.setDeleted();	
+				}
+			});
 		};
 		this.prev = function (bindingContext, event) {
 			var l = Ladda.create(event.target);
@@ -103,6 +109,8 @@
 		};
 		this.whatIsPrev = function () {
 			switch (this.activeView()) {
+				case 'enhanced/title':
+					return this.activity().HasActivity() == 1 ? 'skip-prev' : 'prev';
 				case 'enhanced/initiation':
 					return this.activity().Persons() == 2 ? 'skip-prev' : 'prev';
 				default:
@@ -111,6 +119,8 @@
 		};
 		this.whatIsNext = function () {
 			switch (this.activeView()) {
+				case 'enhanced/has-activity':
+					return this.activity().HasActivity() == 1 ? 'skip-next' : 'next';
 				case 'enhanced/persons':
 					return this.activity().Persons() == 2 ? 'skip-next' : 'next';
 				default:
@@ -127,6 +137,8 @@
 				return true;
 			};
 			switch (this.activeView()) {
+			case 'enhanced/has-activity':
+				return validate(this.activity().HasActivity);
 			case 'enhanced/imagine':
 				return true;
 			case 'enhanced/title':
@@ -136,7 +148,6 @@
 			case 'enhanced/persons':
 				return validate(this.activity().Persons);
 				case 'enhanced/involved-persons':
-					debugger;
 					var e = 0,
 						ips = this.activity().InvolvedPersons();
 					for (var j = 0; j < ips.length; j++) {

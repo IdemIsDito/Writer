@@ -192,6 +192,7 @@
     <Content Include="apple-touch-icon-76x76-precomposed.png" />
     <Content Include="apple-touch-icon-precomposed.png" />
     <Content Include="App\config.js" />
+    <Content Include="App\views\enhanced\has-activity.html" />
     <Content Include="App\views\enhanced\persons.html" />
     <Content Include="App\views\enhanced\initiation.html" />
     <Content Include="App\views\enhanced\overview.html" />
