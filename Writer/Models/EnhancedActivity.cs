@@ -25,10 +25,10 @@ namespace Writer.Models
 		public string Title { get; set; }
 
 		[DataMember]
-		public string Situation { get; set; }
+		public string Summary { get; set; }
 
 		[DataMember]
-		public string Summary { get; set; }
+		public string Situation { get; set; }
 
 		[DataMember]
 		public int Persons  { get; set; } //0 = NULL; 1 = Ja; 2 = Nee

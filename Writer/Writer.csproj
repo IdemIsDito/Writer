@@ -193,6 +193,7 @@
     <Content Include="apple-touch-icon-precomposed.png" />
     <Content Include="App\config.js" />
     <Content Include="App\services\validation.js" />
+    <Content Include="App\viewmodels\base\activity.js" />
     <Content Include="App\views\enhanced\has-activity.html" />
     <Content Include="App\views\enhanced\persons.html" />
     <Content Include="App\views\enhanced\initiation.html" />

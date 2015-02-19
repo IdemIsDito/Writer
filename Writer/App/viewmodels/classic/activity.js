@@ -3,16 +3,19 @@
 	'plugins/router',
 	'services/globals',
 	'services/logger',
-	'services/context'
+	'services/context',
+	'viewmodels/base/activity'
 ], function (
 	app,
 	router,
 	globals,
 	logger,
-	context
+	context,
+	baseactivity
 ) {
 	var vm = function () {
 		var self = this;
+
 		this.views = [
 			'classic/title',
 			'classic/summary',
@@ -21,13 +24,7 @@
 			'classic/satisfaction',
 			'classic/overview'
 		];
-		this.activity = ko.observable();
 
-		this.activeView = ko.observable(this.views[0]);
-
-		this.activateView = function (viewName) {
-			self.activeView(viewName);
-		};
 		this.activate = function () {
 			context.getClassicActivityByParticipant()
 				.then(function (data) {
@@ -40,11 +37,6 @@
 				}).fail(function (error) {
 					logger.logError('Error while activate', error, 'classic/activity.js-activate', true);
 				});
-		};
-		this.getChildView = function (direction) {
-			var activeViewPos = self.views.indexOf(self.activeView()),
-				directionInt = direction === 'next' ? 1 : -1;
-			return self.views[activeViewPos + directionInt];
 		};
 
 		this.prev = function (bindingContext, event) {
@@ -76,43 +68,8 @@
 					});
 			}
 		};
-		this.stepIsValid = function () {
-			var validate = function (field) {
-				var valid = ko.validation.group(field);
-				if (valid().length > 0) {
-					valid.showAllMessages(true);
-					return false;
-				}
-				return true;
-			};
-			switch (this.activeView()) {
-				case 'classic/title':
-					return validate(this.activity().Title);
-				case 'classic/summary':
-					return validate(this.activity().Summary);
-				case 'classic/initiation':
-					return validate(this.activity().Initiation);
-				case 'classic/proceedings':
-					return validate(this.activity().Proceedings);
 
-				case 'classic/satisfaction':
-					return validate(this.activity().Satisfaction);
-			}
-		};
-		this.complete = function (bindingContext, event) {
-			var l = Ladda.create(event.target);
-			l.start();
-			this.activity().EndTime(new Date());
-			context.saveChanges()
-				.then(function () {
-					router.navigate('#/experience');
-					l.stop();
-				})
-				.fail(function (error) {
-					logger.logError('Error while navigating next', error, 'classic/activity.js-next', true);
-					l.stop();
-				});
-		};
+		baseactivity.call(this);
 	};
 	return vm;
 });
