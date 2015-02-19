@@ -48,6 +48,9 @@ namespace Writer.Models
 		public int? GoodActivity { get; set; }
 
 		[DataMember]
+		public string Remarks { get; set; }
+
+		[DataMember]
 		public bool Completed { get; set; }
 	}
 }
