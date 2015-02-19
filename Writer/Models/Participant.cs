@@ -8,8 +8,8 @@ namespace Writer.Models
 		[DataMember]
 		public Guid Guid { get; set; }
 
-		[DataMember]
-		public string ActivityType { get; set; } //ClassicActivity or EnhancedActivity
+		[DataMember] //ClassicActivity or EnhancedActivity
+		public string ActivityType { get; set; }
 
 		[DataMember]
 		public int? Age { get; set; }

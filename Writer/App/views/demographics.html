@@ -30,10 +30,12 @@
 						<input class="form-control" data-bind="value: EducationCompletedDifferent" />
 					</div>
 					<div class="form-group form-group-lg" data-bind="validationElement: SimaExperience">
-						<label class="control-label">Heeft u ervaring met SIMA?</label>
+						<label class="control-label">Heb je ervaring met SIMA?</label>
 						<select class="form-control" data-bind="options: ['Ja', 'Nee'], optionsCaption: '[ Maak een keuze ]', value: SimaExperience"></select>
 					</div>
-					<p class="text-justify"> Om mee te kunnen doen aan de verloting van de bol.com waardenbonnen dien je een e-mailadres achter te laten. Anders weet ik natuurlijk niet aan wie ik de cadeaubon moet overhandigen. Dit is echter niet verplicht.</p> 
+					<div class="alert alert-info text-justify">
+						Om mee te kunnen doen aan de verloting van de bol.com waardenbonnen dien je een e-mailadres achter te laten. Anders weet ik natuurlijk niet aan wie ik de cadeaubon moet overhandigen. Dit is echter niet verplicht.
+					</div>
 					<div class="form-group form-group-lg" data-bind="validationElement: Email">
 						<label class="control-label">Je e-mailadres:</label>
 						<input type="email" class="form-control" data-bind="value: Email" />

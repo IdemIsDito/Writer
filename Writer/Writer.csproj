@@ -201,6 +201,7 @@
     <Content Include="App\views\enhanced\proceedings.html" />
     <Content Include="App\views\enhanced\satisfaction.html" />
     <Content Include="App\views\enhanced\situation.html" />
+    <Content Include="App\views\enhanced\summary.html" />
     <Content Include="gulpfile.js" />
     <Content Include="App\services\globals.js" />
     <Content Include="App\main.js" />

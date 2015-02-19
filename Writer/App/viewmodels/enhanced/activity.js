@@ -18,6 +18,7 @@
 			'enhanced/imagine',
 			'enhanced/title',
 			'enhanced/situation',
+			'enhanced/summary',
 			'enhanced/persons',
 			'enhanced/involved-persons',
 			'enhanced/initiation',
@@ -145,6 +146,8 @@
 				return validate(this.activity().Title);
 			case 'enhanced/situation':
 				return validate(this.activity().Situation);
+			case 'enhanced/summary':
+					return validate(this.activity().Summary);
 			case 'enhanced/persons':
 				return validate(this.activity().Persons);
 				case 'enhanced/involved-persons':

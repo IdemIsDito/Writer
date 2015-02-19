@@ -28,6 +28,9 @@ namespace Writer.Models
 		public string Situation { get; set; }
 
 		[DataMember]
+		public string Summary { get; set; }
+
+		[DataMember]
 		public int Persons  { get; set; } //0 = NULL; 1 = Ja; 2 = Nee
 
 		[DataMember]
