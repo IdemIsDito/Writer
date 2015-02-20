@@ -17,10 +17,10 @@
 }
 
 .modalHost {
-	top: 20%;
+	top: 50%;
 	left: 50%;
 	position: fixed;
-	opacity: 0;
+	opacity: 1;
 	-webkit-backface-visibility: hidden;
 }
 

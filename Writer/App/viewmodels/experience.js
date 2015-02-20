@@ -12,6 +12,8 @@
 	var vm = function () {
 		var self = this;
 
+		this.imageRoot = globals.imageRoot;
+
 		this.participant = globals.participant;
 
 		this.participant().InstructionClear.extend({required: { message: "Dit is een verplicht veld." } });
@@ -35,8 +37,7 @@
 
 		this.complete = function () {
 			if (this.isValid()) {
-				var l = Ladda.create(event.target);
-				l.start();
+				var l = Ladda.create(event.target).start();
 				self.participant().Completed(true);
 				context.saveChanges()
 					.then(function () {

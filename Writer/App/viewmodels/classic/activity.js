@@ -1,14 +1,8 @@
 ﻿define([
-	'durandal/app',
-	'plugins/router',
-	'services/globals',
 	'services/logger',
 	'services/context',
 	'viewmodels/base/activity'
 ], function (
-	app,
-	router,
-	globals,
 	logger,
 	context,
 	baseactivity
@@ -37,36 +31,6 @@
 				}).fail(function (error) {
 					logger.logError('Error while activate', error, 'classic/activity.js-activate', true);
 				});
-		};
-
-		this.prev = function (bindingContext, event) {
-			var l = Ladda.create(event.target);
-			l.start();
-			context.saveChanges()
-				.then(function () {
-					self.activateView(self.getChildView('prev'));
-					l.stop();
-				})
-				.fail(function (error) {
-					logger.logError('Error while navigating prev', error, 'classic/activity.js-prev', true);
-					l.stop();
-				});
-		};
-
-		this.next = function (bindingContext, event) {
-			if (this.stepIsValid()) {
-				var l = Ladda.create(event.target);
-				l.start();
-				context.saveChanges()
-					.then(function () {
-						self.activateView(self.getChildView('next'));
-						l.stop();
-					})
-					.fail(function (error) {
-						logger.logError('Error while navigating next', error, 'classic/activity.js-next', true);
-						l.stop();
-					});
-			}
 		};
 
 		baseactivity.call(this);

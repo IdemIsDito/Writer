@@ -1,8 +1,11 @@
 ﻿<form>
 	<fieldset data-bind="with: activity">
-		<div class="form-group form-group-lg" data-bind="validationElement: Summary">
-			<h2 class="control-label">Korte samenvatting van de activiteit:</h2>
-			<textarea class="form-control" rows="10" data-bind="value: Summary" autofocus></textarea>
+		<div class="form-group form-group-lg" data-bind="validationElement: Role">
+			<h2 class="control-label">Beschrijf jou rol en aandeel in dactiviteit</h2>
+			<p class="readable">
+				<!-- TODO: --> 	Beschrijf waarom?
+			</p>
+			<textarea class="form-control" rows="10" data-bind="value: Role" autofocus></textarea>
 		</div>
 	</fieldset>
 </form>

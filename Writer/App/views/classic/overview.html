@@ -1,4 +1,8 @@
 ﻿<div data-bind="with: activity">
+	<p class="readable hidden-print">
+		Onderstaand staat de gehele beschrijving van jouw activiteit. Lees deze nog een keer goed door alvorens je verder gaat. Wil je iets wijzigen? Navigeer dan terug met de VORIGE knop.
+	</p>
+	<hr/>
 	<h3>Titel van de activiteit:</h3>
 	<p class="readable" data-bind="text: Title"></p>
 	<h3>Korte samenvatting van de activiteit:</h3>
@@ -12,9 +16,9 @@
 </div>
 <div class="btn-toolbar btn-toolbar-controls hidden-print">
 	<button class="btn ladda-button btn-default btn-lg pull-left" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: prev">
-		Vorige
+		VORIGE
 	</button>
 	<button class="btn ladda-button btn-default btn-lg pull-right" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: complete">
-		Volgende
+		VOLGENDE
 	</button>
 </div>

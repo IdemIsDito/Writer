@@ -1,4 +1,5 @@
-﻿<div class="container">
+﻿<img class="img-responsive" data-bind="attr :{ 'src': imageRoot + 'experience.jpg' }" title="Waar gaan we heen?" />
+<div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 			<h1 class="page-header">Uw ervaringen</h1>
@@ -9,20 +10,20 @@
 		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 			<form>
 				<fieldset data-bind="with: participant">
-					<div data-bind="likert: { name: 'InstructionsClear', field: InstructionClear }"></div>
-					<div data-bind="likert: { name: 'InstructionEffective', field: InstructionEffective }"></div>
+					<div data-bind="likert: { name: 'InstructionsClear', field: InstructionClear, question: 'Waren de instrucites duidelijk?' }"></div>
+					<div data-bind="likert: { name: 'InstructionEffective', field: InstructionEffective, question: 'Waren de instrucites effectief?' }"></div>
 					<div data-bind="if: ActivityType() === 'Enhanced'">
-						<div data-bind="likert: { name: 'FeedbackClear', field: FeedbackClear }"></div>
-						<div data-bind="likert: { name: 'FeedbackEffective', field: FeedbackEffective }"></div>
+						<div data-bind="likert: { name: 'FeedbackClear', field: FeedbackClear, question: 'Was de feedback duidelijk?' }"></div>
+						<div data-bind="likert: { name: 'FeedbackEffective', field: FeedbackEffective, question: 'Was de feedback effectief?' }"></div>
 					</div>
-					<div data-bind="likert: { name: 'GoodActivity', field: GoodActivity }"></div>
+					<div data-bind="likert: { name: 'GoodActivity', field: GoodActivity, question: 'Vind je dat je een goede beschrijving heb gemaakt?'}"></div>
 					<label class="control-label">Heb je nog opmerkingen of wil je nog iets kwijt:</label>
 					<textarea class="form-control" rows="5" data-bind="value: Remarks"></textarea>
 				</fieldset>
 			</form>
 			<div class="btn-toolbar btn-toolbar-controls">
 				<button class="btn ladda-button btn-default btn-lg pull-right" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: complete">
-					Volgende
+					VOLGENDE
 				</button>
 			</div>
 		</div>

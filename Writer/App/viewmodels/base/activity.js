@@ -1,29 +1,30 @@
 ﻿define([
 	'plugins/router',
+	'services/globals',
 	'services/logger',
 	'services/context'
 ], function (
 	router,
+	globals,
 	logger,
 	context
 ) {
 	var base = function() {
 		var self = this;
 
+		this.imageRoot = globals.imageRoot;
+
 		this.activity = ko.observable();
 
 		this.activeView = ko.observable(this.views[0]);
 
 		this.activateView = function (viewName) {
-			if (self.prepareView) {
-				self.prepareView(viewName);
-			}
+			self.prepareView(viewName);
 			self.activeView(viewName);
 		};
 
 		this.complete = function (bindingContext, event) {
-			var l = Ladda.create(event.target);
-			l.start();
+			var l = Ladda.create(event.target).start();
 			this.activity().EndTime(new Date());
 			context.saveChanges()
 				.then(function () {
@@ -44,8 +45,7 @@
 
 		this.next = function (bindingContext, event) {
 			if (this.stepIsValid()) {
-				var l = Ladda.create(event.target);
-				l.start();
+				var l = Ladda.create(event.target).start();
 				context.saveChanges()
 					.then(function () {
 						self.activateView(self.getChildView(self.whatIsNext()));
@@ -58,9 +58,21 @@
 			}
 		};
 
+
+		this.prepareView = function (viewName) {
+			switch (viewName) {
+				case 'enhanced/involved-persons':
+					var ips = self.activity().InvolvedPersons();
+					if (ips.length === 0) {
+						ips.push(context.createInvolvedPerson(self.activity().Id()));
+						break;
+					}
+					break;
+			}
+		};
+
 		this.prev = function (bindingContext, event) {
-			var l = Ladda.create(event.target);
-			l.start();
+			var l = Ladda.create(event.target).start();
 			context.saveChanges()
 				.then(function () {
 					self.activateView(self.getChildView(self.whatIsPrev()));
@@ -100,6 +112,8 @@
 					return validate(this.activity().Title);
 				case 'enhanced/situation':
 					return validate(this.activity().Situation);
+				case 'enhanced/role':
+					return validate(this.activity().Role);
 				case 'enhanced/summary':
 					return validate(this.activity().Summary);
 				case 'enhanced/persons':

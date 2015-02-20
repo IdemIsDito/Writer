@@ -201,8 +201,13 @@
     <Content Include="App\views\enhanced\involved-persons.html" />
     <Content Include="App\views\enhanced\proceedings.html" />
     <Content Include="App\views\enhanced\satisfaction.html" />
+    <Content Include="App\views\enhanced\role.html" />
     <Content Include="App\views\enhanced\situation.html" />
     <Content Include="App\views\enhanced\summary.html" />
+    <Content Include="Content\images\activity.jpg" />
+    <Content Include="Content\images\demographics.jpg" />
+    <Content Include="Content\images\experience.jpg" />
+    <Content Include="Content\images\welcome.jpg" />
     <Content Include="gulpfile.js" />
     <Content Include="App\services\globals.js" />
     <Content Include="App\main.js" />
@@ -249,9 +254,7 @@
     <Content Include="Content\images\pen.png" />
     <Content Include="Content\images\completed.jpg" />
     <Content Include="Content\images\favicon.ico" />
-    <Content Include="Content\images\instructions.jpg" />
     <Content Include="Content\images\thanks.jpg" />
-    <Content Include="Content\images\welcome.jpg" />
     <Content Include="Content\ladda-themeless.css" />
     <Content Include="Content\ladda-themeless.min.css" />
     <Content Include="Content\ladda.css" />

@@ -93,12 +93,23 @@
 
 	function eaInitializer(ea) {
 		ea.HasActivity.extend({
+			min: {
+				params: 1,
+				message: "Dit is een verplicht veld."
+			},
+			max: {
+				params: 2,
+				message: "Dit is een verplicht veld."
+			},
+		});
+
+		ea.Title.extend({
 			required: {
 				message: "Dit is een verplicht veld."
 			}
 		});
 
-		ea.Title.extend({
+		ea.Summary.extend({
 			required: {
 				message: "Dit is een verplicht veld."
 			}
@@ -110,10 +121,21 @@
 			}
 		});
 
-		ea.Persons.extend({
+		ea.Role.extend({
 			required: {
 				message: "Dit is een verplicht veld."
 			}
+		});
+
+		ea.Persons.extend({
+			min: {
+				params: 1,
+				message: "Dit is een verplicht veld."
+			},
+			max: {
+				params: 2,
+				message: "Dit is een verplicht veld."
+			},
 		});
 
 		ea.Initiation.extend({

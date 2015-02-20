@@ -26,6 +26,8 @@
 			'Anders...'
 		];
 
+		this.imageRoot = globals.imageRoot;
+
 		this.participant = globals.participant;
 
 		this.EducationCompletedIsDifferent = ko.computed(function () {
@@ -55,8 +57,7 @@
 
 		this.next = function (bindingContext, event) {
 			if (this.isValid()) {
-				var l = Ladda.create(event.target);
-					l.start();
+				var l = Ladda.create(event.target).start();
 				context.saveChanges()
 					.then(function () {
 						l.stop();

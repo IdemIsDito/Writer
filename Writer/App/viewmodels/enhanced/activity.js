@@ -18,7 +18,7 @@
 			'enhanced/title',
 			'enhanced/summary',
 			'enhanced/situation',
-			//'enhanced/role',
+			'enhanced/role',
 			'enhanced/persons',
 			'enhanced/involved-persons',
 			'enhanced/initiation',
@@ -46,31 +46,6 @@
 			context.createInvolvedPerson(self.activity().Id());
 		};
 
-		this.prepareView = function (viewName) {
-			switch (viewName) {
-			case 'enhanced/involved-persons':
-				var ips = self.activity().InvolvedPersons();
-				if (ips.length === 0) {
-					ips.push(context.createInvolvedPerson(self.activity().Id()));
-					break;
-				}
-				break;
-			}
-		};
-
-		this.removePerson = function (person) {
-			var n = person.Name();
-			app.showMessage('Weet je zeker dat je deze persoon' + (n ? ' <b>(' + n + ')</b>' : '') + ' wilt verwijderen?', 'Weet je het zeker?', ['Ja', 'Nee'])
-				.then(function(result){
-				if (result === 'Ja') {
-					var ip = self.activity().InvolvedPersons,
-					personIndex = ip.indexOf(person);
-					ip.splice(personIndex, 1);
-					person.entityAspect.setDeleted();	
-				}
-			});
-		};
-		
 		this.checkSentiment = function (text) {
 			$.ajax({
 				type: "POST",
@@ -86,6 +61,19 @@
 				}
 			}).done(function (data) {
 				//do something with data;
+			});
+		};
+
+		this.removePerson = function (person) {
+			var n = person.Name();
+			app.showMessage('Weet je zeker dat je deze persoon' + (n ? ' <b>(' + n + ')</b>' : '') + ' wilt verwijderen?', 'Weet je het zeker?', ['Ja', 'Nee'])
+				.then(function(result){
+				if (result === 'Ja') {
+					var ip = self.activity().InvolvedPersons,
+					personIndex = ip.indexOf(person);
+					ip.splice(personIndex, 1);
+					person.entityAspect.setDeleted();	
+				}
 			});
 		};
 
