@@ -46,24 +46,6 @@
 			context.createInvolvedPerson(self.activity().Id());
 		};
 
-		this.checkSentiment = function (text) {
-			$.ajax({
-				type: "POST",
-				url: "https://japerk-text-processing.p.mashape.com/sentiment/",
-				beforeSend: function (xhr) {
-					xhr.setRequestHeader('X-Mashape-Key', 'dyDo5R3lphmshMhp1pl8iVQWUN2gp1rBidkjsnw64NSr8ZdB2d');
-				},
-				contentType: 'application/x-www-form-urlencoded',
-				dataType: 'json',
-				data: {
-					'language': 'dutch',
-					'text': text
-				}
-			}).done(function (data) {
-				//do something with data;
-			});
-		};
-
 		this.removePerson = function (person) {
 			var n = person.Name();
 			app.showMessage('Weet je zeker dat je deze persoon' + (n ? ' <b>(' + n + ')</b>' : '') + ' wilt verwijderen?', 'Weet je het zeker?', ['Ja', 'Nee'])

@@ -43,7 +43,27 @@
 				}
 			});
 		};
-
+		this.checkSentiment = function (text) {
+			var r = false;
+			$.ajax({
+				type: "POST",
+				url: "https://japerk-text-processing.p.mashape.com/sentiment/",
+				beforeSend: function (xhr) {
+					xhr.setRequestHeader('X-Mashape-Key', 'dyDo5R3lphmshMhp1pl8iVQWUN2gp1rBidkjsnw64NSr8ZdB2d');
+				},
+				contentType: 'application/x-www-form-urlencoded',
+				dataType: 'json',
+				data: {
+					'language': 'dutch',
+					'text': text
+				}
+			}).done(function (data) {
+				if (data.label === "pos") {
+					r = true;
+				}
+			});
+			return r;
+		};
 		this.getChildView = function (direction) {
 			var activeViewPos = self.views.indexOf(self.activeView()),
 				directionInt = direction === 'next' ? 1 : direction === 'skip-next' ? 2 : direction === 'skip-prev' ? -2 : -1;
@@ -51,8 +71,8 @@
 		};
 
 		this.next = function (bindingContext, event) {
+			var l = Ladda.create(event.target).start();
 			if (this.stepIsValid()) {
-				var l = Ladda.create(event.target).start();
 				context.saveChanges()
 					.then(function () {
 						self.activateView(self.getChildView(self.whatIsNext()));
@@ -137,7 +157,7 @@
 				case 'enhanced/proceedings':
 					return validate(this.activity().Proceedings);
 				case 'enhanced/satisfaction':
-					return validate(this.activity().Satisfaction);
+					return validate(this.activity().Satisfaction); //&& this.checkSentiment(this.activity().Satisfaction());
 			}
 		};
 		this.whatIsNext = function () {

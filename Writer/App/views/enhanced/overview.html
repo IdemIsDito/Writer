@@ -1,14 +1,24 @@
 ﻿<div data-bind="with: activity">
 	<p class="readable has-error">
-		<!-- TODO: --> 	Toon hier de checkvragen an de instructies!!!
+		<!-- TODO: -->
+		<!--
+			<ul class="readable text-justify">
+				<li>Zien we je iets doen?</li>
+				<li>Kreeg je iets voor elkaar, bereikte je iets?</li>
+				<li>Beschrijf vooral jouw eigen aandeel in de activiteit.</li>
+				<li>Kreeg je een gevoel van voldoening toen je ermee bezig was? Met andere woorden, zat je er echt helemaal middenin, vloog de tijd voorbij en gaan jouw ogen glimmen, als je eraan terugdenkt?</li>
+				<li>Heb je ook gedacht aan de activiteit, die zich in jouw hoofd afspeelde (wat je dacht, voelde, voor ogen zag, welk plan je in gedachten had)?</li>
+				<li>Is het méér dan een moment van geluk, een ervaring of een mijlpaal?</li>
+				<li>Heb je ervan genoten, vond je dat je het goed deed? Of vertelde jouw vader, moeder, vrouw, man, vriend, collega of leidinggevende je dat zij het zo leuk van je vonden en dat je er zo goed in was?</li>
+			</ul> 
+			-->
 	</p>
-	<h3>Titel van de activiteit:</h3>
-	<p class="readable" data-bind="text: Title"></p>
-	<h3>Situatie</h3>
+	<h3 data-bind="text: Title"></h3>
+	<p class="readable text-justify" data-bind="text: Summary"></p>
 	<p class="readable text-justify" data-bind="text: Situation"></p>
-	<h3>Personen</h3>
+	<p class="readable text-justify" data-bind="text: Role"></p>
 	<div class="readable text-justify">
-		<span data-bind="text: Persons() === 1 ? '' : 'Er waren geen andere personen betrokken bij deze activiteit'"></span>
+		<span data-bind="text: Persons() === 1 ? 'De volgende personen waren betrokken:' : 'Er waren geen andere personen betrokken'"></span>
 		<div data-bind="if: InvolvedPersons().length > 0 ">
 			<table class="table table-bordered">
 				<thead>
@@ -26,11 +36,8 @@
 			</table>
 		</div>
 	</div>
-	<h3>Start</h3>
 	<p class="readable text-justify" data-bind="text: Initiation"></p>
-	<h3>Handelingen</h3>
 	<p class="readable text-justify" data-bind="text: Proceedings"></p>
-	<h3>Voldoening</h3>
 	<p class="readable text-justify" data-bind="text: Satisfaction"></p>
 </div>
 <div class="btn-toolbar btn-toolbar-controls hidden-print">
@@ -38,6 +45,6 @@
 		VORIGE
 	</button>
 	<button class="btn ladda-button btn-default btn-lg pull-right" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: complete">
-		VOLGENDE
+		AFRONDEN
 	</button>
 </div>

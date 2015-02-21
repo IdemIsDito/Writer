@@ -1,7 +1,10 @@
 ﻿<form>
 	<fieldset data-bind="with: activity">
 		<div class="form-group form-group-lg" data-bind="validationElement: Persons">
-			<h2 class="control-label">Waren er andere personen betrokken bij de activiteit</h2>
+			<h2 class="control-label">Waren er andere personen betrokken?</h2>
+			<p class="readable text-justify">
+				Betrokken personen zijn anderen die een actief aandeel in de activiteit hadden. Als je bijvoorbeeld een sport als activiteit hebt, dan is het niet de bedoeling dat je het hele team tot de betrokken personen rekend, maar alleen de personen die actief deelnamen aan de specifieke activiteit die je aan het beschrijven bent.
+			</p>
 			<div class="btn-group btn-group-justified" data-toggle="buttons">
 				<label class="btn ladda-button btn-info btn-lg">
 					<input type="radio" name="person" value="1" data-bind="radioButtonGroupChecked: Persons"> Ja

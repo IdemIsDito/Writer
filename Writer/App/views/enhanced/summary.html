@@ -1,8 +1,11 @@
 ﻿<form>
 	<fieldset data-bind="with: activity">
 		<div class="form-group form-group-lg" data-bind="validationElement: Summary">
-			<h2 class="control-label">Korte samenvatting van de activiteit:</h2>
-			<textarea class="form-control" rows="10" data-bind="value: Summary" autofocus></textarea>
+			<h2 class="control-label">Korte samenvatting</h2>
+			<p class="readable">
+				Beschrijf de activiteit globaal. Doe dit in een paar zinnen.
+			</p>
+			<textarea class="form-control" rows="5" data-bind="value: Summary" autofocus></textarea>
 		</div>
 	</fieldset>
 </form>
