@@ -8,7 +8,7 @@ namespace Writer.Models
 		[DataMember]
 		public Guid Guid { get; set; }
 
-		[DataMember] //ClassicActivity or EnhancedActivity
+		[DataMember] //ClassicActivity or EnhancedActivity;
 		public string ActivityType { get; set; }
 
 		[DataMember]
@@ -32,19 +32,19 @@ namespace Writer.Models
 		[DataMember]
 		public string SimaExperience { get; set; }
 
-		[DataMember]
+		[DataMember] //1 = Volledig oneens; 2 = Oneens; 3 = Neutraal; 4 = Eens; 5 = Volledig eens;
 		public int? InstructionClear { get; set; }
-		
-		[DataMember]
+
+		[DataMember] //1 = Volledig oneens; 2 = Oneens; 3 = Neutraal; 4 = Eens; 5 = Volledig eens;
 		public int? InstructionEffective { get; set; }
-		
-		[DataMember]
+
+		[DataMember] //1 = Volledig oneens; 2 = Oneens; 3 = Neutraal; 4 = Eens; 5 = Volledig eens;
 		public int? FeedbackClear { get; set; }
 
-		[DataMember]
+		[DataMember] //1 = Volledig oneens; 2 = Oneens; 3 = Neutraal; 4 = Eens; 5 = Volledig eens;
 		public int? FeedbackEffective { get; set; }
 
-		[DataMember]
+		[DataMember] //1 = Volledig oneens; 2 = Oneens; 3 = Neutraal; 4 = Eens; 5 = Volledig eens;
 		public int? GoodActivity { get; set; }
 
 		[DataMember]

@@ -18,8 +18,8 @@ namespace Writer.Models
 		[ForeignKey("ParticipantId")]
 		public Participant Participant { get; set; }
 
-		[DataMember]
-		public int HasActivity { get; set; } //0 = NULL; 1 = Ja; 2 = Nee, help mij
+		[DataMember] //0 = NULL; 1 = Ja; 2 = Nee, help mij;
+		public int HasActivity { get; set; }
 
 		[DataMember]
 		public string Title { get; set; }
@@ -33,8 +33,8 @@ namespace Writer.Models
 		[DataMember]
 		public string Role { get; set; }
 
-		[DataMember]
-		public int Persons  { get; set; } //0 = NULL; 1 = Ja; 2 = Nee
+		[DataMember] //0 = NULL; 1 = Ja; 2 = Nee;
+		public int Persons  { get; set; }
 
 		[DataMember]
 		public ICollection<InvolvedPerson> InvolvedPersons { get; set; }

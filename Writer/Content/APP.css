@@ -89,3 +89,7 @@ td.sized {
 
 .btn-toolbar > .btn.pull-right,
 .btn-toolbar > .btn.pull-left { margin-left: 0; }
+
+.btn-group-experience > .btn {
+	font-size: 14px;
+}
