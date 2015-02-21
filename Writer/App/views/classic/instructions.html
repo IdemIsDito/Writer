@@ -2,71 +2,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<h1 class="page-header">Instructies</h1>
-			<p class="readable">
-				Je gaat straks één activiteit beschrijven. Neem tijdens het schrijven de onderstaande zaken in acht.
-			</p>
-			<dl class="readable text-justify">
-				<dt>
-					Denk na over concrete activiteiten die je in je leven hebt verricht. 
-				</dt>
-				<dd>
-					Kies één activiteit om te beschrijven, deze dient te voldoen aan de volgende criteria:
-					<ul>
-						<li>Binnen de activiteiten verrichtte je bepaalde handelingen, bepaald denkwerk, doorliep je een bepaald proces of bereikte je een waarneembaar resultaat waarover je zélf tevreden was.</li>
-						<li>Je beleefde plezier aan de activiteiten zélf, dus niet alleen aan het eindresultaat.</li>
-						<li>Je had zélf het gevoel dat je goed presteerde.</li>
-					</ul>
-				</dd>
-				<dt>
-					Maak onderscheid tussen ervaringen en activiteiten. (Beschrijf een activiteit)
-				</dt>
-				<dd>
-					Een ervaring kan gevoelsmatig voor je belangrijk zijn geweest, maar meestal gaat het om situaties waarin niet goed zichtbaar is wat je feitelijk deed.
-					<ul>
-						<li><b>Een ervaring: </b>Ik speelde graag met andere kinderen op straat.</li>
-						<li><b>Een activiteit: </b>Ik organiseerde een slagbalwedstrijd voor de kinderen uit de buurt.</li>
-						<li><b>Een ervaring:</b> Reizen naar Zuid-Amerika en Azië.</li>
-						<li><b>Een activiteit:</b> Het voorbereiden van een trekvakantie door India en het maken van een fotoreportage daarover.</li>
-					</ul>
-				</dd>
-				<dt>
-					Schrijf zo spontaan mogelijk op wat je zelf herinnert.
-				</dt>
-				<dd>
-					<p class="readable"> Doe jouw herinneringen niet af met oordelen als “kinderachtig”, “futiel” of “eigenlijk stelde het niet zoveel voor” alles wat voor jou waardevol was, al duurde het maar vijf minuten, is bruikbaar.</p>
-				</dd>
-				<dt>
-					Beschrijf jouw activiteiten specifiek en niet algemeen.
-				</dt>
-				<dd>
-					<ul>
-						<li><b>Niet:</b> Ik klus graag in huis. </li>
-						<li><b>Wel:</b> Ik verbouwde zelf onze badkamer.</li>
-					</ul>
-				</dd>
-				<dt>
-					Denk voor je begint met schrijven nog even aan de volgende aandachtspunten:
-				</dt>
-				<dd>
-					<ul>
-						<li>Zien we je iets doen?</li>
-						<li>Kreeg je iets voor elkaar, bereikte je iets?</li>
-						<li>Beschrijf vooral jouw eigen aandeel in de activiteit.</li>
-						<li>Kreeg je een gevoel van voldoening toen je ermee bezig was? Met andere woorden, zat je er echt helemaal middenin, vloog de tijd voorbij en gaan jouw ogen glimmen, als je eraan terugdenkt?</li>
-						<li>Heb je ook gedacht aan de activiteit, die zich in jouw hoofd afspeelde (wat je dacht, voelde, voor ogen zag, welk plan je in gedachten had)?</li>
-						<li>Is het méér dan een moment van geluk, een ervaring of een mijlpaal?</li>
-						<li>Heb je ervan genoten, vond je dat je het goed deed? Of vertelde jouw vader, moeder, vrouw, man, vriend, collega of leidinggevende je dat zij het zo leuk van je vonden en dat je er zo goed in was?</li>
-					</ul>
-				</dd>
-			</dl>
+			<div class="page-header">
+				<h1 class="pull-left">Instructies</h1>
+				<h3 class="pull-right hidden-print" data-bind="text: views.indexOf(activeView()) + 1 + '/' + views.length"></h3>
+				<div class="clearfix"></div>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<a class="btn btn-default btn-lg btn-block" href="#/activiteit">
-				START MET SCHRIJVEN
-			</a>
-		</div>
-	</div>
+	<div data-bind="compose: { view: activeView, transition: 'fadeUp' }"></div>
 </div>

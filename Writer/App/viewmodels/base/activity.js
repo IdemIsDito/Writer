@@ -1,9 +1,11 @@
 ﻿define([
+	'durandal/app',
 	'plugins/router',
 	'services/globals',
 	'services/logger',
 	'services/context'
 ], function (
+	app,
 	router,
 	globals,
 	logger,
@@ -24,17 +26,22 @@
 		};
 
 		this.complete = function (bindingContext, event) {
-			var l = Ladda.create(event.target).start();
-			this.activity().EndTime(new Date());
-			context.saveChanges()
-				.then(function () {
-					router.navigate('#/experience');
-					l.stop();
-				})
-				.fail(function (error) {
-					logger.logError('Error while completing activity', error, 'base/activity.js-next', true);
-					l.stop();
-				});
+			app.showMessage('Je staat nu op het punt de activiteit af te ronden. Hierna wordt de beschrijving van je activiteit gesloten. Je kan dan niets meer wijzigen.', 'Ben je helemaal klaar?', ['Ja', 'Nee'])
+				.then(function (result) {
+				if (result === 'Ja') {
+					var l = Ladda.create(event.target).start();
+					self.activity().EndTime(new Date());
+					context.saveChanges()
+						.then(function () {
+							router.navigate('#/experience');
+							l.stop();
+						})
+						.fail(function (error) {
+							logger.logError('Error while completing activity', error, 'base/activity.js-next', true);
+							l.stop();
+						});
+				}
+			});
 		};
 
 		this.getChildView = function (direction) {

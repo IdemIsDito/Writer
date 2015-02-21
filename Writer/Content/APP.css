@@ -35,7 +35,9 @@ h3 {
 	line-height: 28px;
 	margin: 0 0 28px;
 }
-
+.readable.no-bottom-margin {
+	margin-bottom: 0;
+}
 .readable dd {
 	margin-bottom: 28px;
 }
@@ -74,7 +76,9 @@ td.sized {
 .page-header h3 { margin-top: 20px; }
 
 .durandal-wrapper > h2,
-.form-group > h2 { margin-top: 0; }
+.form-group > h2 {
+	 margin-top: 0;
+}
 
 .btn-toolbar {
 	margin: 10px 0;

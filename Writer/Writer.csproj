@@ -194,6 +194,11 @@
     <Content Include="App\config.js" />
     <Content Include="App\services\validation.js" />
     <Content Include="App\viewmodels\base\activity.js" />
+    <Content Include="App\views\classic\instructions\fifth.html" />
+    <Content Include="App\views\classic\instructions\second.html" />
+    <Content Include="App\views\classic\instructions\first.html" />
+    <Content Include="App\views\classic\instructions\fourth.html" />
+    <Content Include="App\views\classic\instructions\third.html" />
     <Content Include="App\views\enhanced\has-activity.html" />
     <Content Include="App\views\enhanced\persons.html" />
     <Content Include="App\views\enhanced\initiation.html" />
