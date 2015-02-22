@@ -32,6 +32,10 @@
 			self.activeView(self.getChildView('prev'));
 		};
 
+		this.progress = ko.computed(function () {
+			var av = self.activeView();
+			return av ? (100 / self.views.length) * self.views.indexOf(av) : 0;
+		});
 	};
 	return vm;
 })

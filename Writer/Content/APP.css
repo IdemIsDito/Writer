@@ -53,7 +53,7 @@ td.sized {
 	width: 125px;
 }
 
-.btn, .form-control, .panel, .modal-content {
+.btn, .form-control, .panel, .modal-content, .progress {
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	-ms-border-radius: 0 !important;
