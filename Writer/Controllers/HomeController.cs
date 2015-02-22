@@ -58,8 +58,16 @@ namespace Writer.Controllers
 
 		public RedirectResult Index()
 		{
-			var guid = AssignParticipant();
 			var siteRoot = GetSiteRoot();
+//			TODO browsercheck
+//			if (Request.Browser.Type.ToUpper().Contains("IE")) // replace with your check
+//			{
+//				if (Request.Browser.MajorVersion < 9)
+//				{
+//					return Redirect(siteRoot + "/Home/OutdatedBorwser");
+//				}
+//			}
+			var guid = AssignParticipant();
 			return Redirect(siteRoot + "/" + guid + "/");
 		}
 
@@ -102,6 +110,11 @@ namespace Writer.Controllers
 			ViewBag.SiteConfig = config;
 
 			return View("Index");
+		}
+
+		public ActionResult OutdatedBorwser()
+		{
+			return View("OutdatedBrowser");
 		}
 	}
 

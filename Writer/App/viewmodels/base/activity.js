@@ -71,8 +71,8 @@
 		};
 
 		this.next = function (bindingContext, event) {
-			var l = Ladda.create(event.target).start();
 			if (this.stepIsValid()) {
+				var l = Ladda.create(event.target).start();
 				context.saveChanges()
 					.then(function () {
 						self.activateView(self.getChildView(self.whatIsNext()));

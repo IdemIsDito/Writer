@@ -333,6 +333,7 @@
     <Content Include="Views\Home\_splash.cshtml" />
     <Content Include="Scripts\knockout.validation.min.js.map" />
     <Content Include="Views\Home\Completed.cshtml" />
+    <Content Include="Views\Home\OutdatedBrowser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

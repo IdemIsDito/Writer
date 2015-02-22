@@ -35,7 +35,7 @@
 			return true;
 		};
 
-		this.complete = function () {
+		this.complete = function (bindingContext, event) {
 			if (this.isValid()) {
 				var l = Ladda.create(event.target).start();
 				self.participant().Completed(true);
