@@ -41,7 +41,7 @@
 				self.participant().Completed(true);
 				context.saveChanges()
 					.then(function () {
-						router.navigate('#/thanks');
+						router.navigate('#/bedankt');
 						l.stop();
 					})
 					.fail(function (error) {
