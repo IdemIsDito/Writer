@@ -59,14 +59,13 @@ namespace Writer.Controllers
 		public RedirectResult Index()
 		{
 			var siteRoot = GetSiteRoot();
-//			TODO browsercheck
-//			if (Request.Browser.Type.ToUpper().Contains("IE")) // replace with your check
-//			{
-//				if (Request.Browser.MajorVersion < 9)
-//				{
-//					return Redirect(siteRoot + "/Home/OutdatedBorwser");
-//				}
-//			}
+			if (Request.Browser.Type.ToUpper().Contains("IE"))
+			{
+				if (Request.Browser.MajorVersion < 9)
+				{
+					return Redirect(siteRoot + "/Home/OutdatedBorwser");
+				}
+			}
 			var guid = AssignParticipant();
 			return Redirect(siteRoot + "/" + guid + "/");
 		}
