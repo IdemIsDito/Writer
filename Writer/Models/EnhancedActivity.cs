@@ -34,7 +34,7 @@ namespace Writer.Models
 		public string Role { get; set; }
 
 		[DataMember] //0 = NULL; 1 = Ja; 2 = Nee;
-		public int Persons  { get; set; }
+		public int Persons { get; set; }
 
 		[DataMember]
 		public ICollection<InvolvedPerson> InvolvedPersons { get; set; }
@@ -44,9 +44,18 @@ namespace Writer.Models
 
 		[DataMember]
 		public string Proceedings { get; set; }
-		
+
+		[DataMember]
+		public bool ProceedingsIsChecked { get; set; }
+
 		[DataMember]
 		public string Satisfaction { get; set; }
+
+		[DataMember]
+		public bool SatisfactionIsChecked { get; set; }
+
+		[DataMember]
+		public bool OverviewIsChecked { get; set; }
 
 		[DataMember]
 		public DateTime? StartTime { get; set; }

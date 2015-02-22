@@ -19,23 +19,23 @@
 
 			ko.utils.arrayPushAll(routes, [
 				{ route: '', moduleId: 'viewmodels/welcome', title: 'Welkom', nav: true},
-				{ route: 'demographics', moduleId: 'viewmodels/demographics', title: 'Demografische gegevens', nav: true }
+				{ route: 'demografie', moduleId: 'viewmodels/demographics', title: 'Demografische gegevens', nav: true }
 			]);
 
 			if (globals.participant().ActivityType() === 'Classic') {
 				ko.utils.arrayPushAll(routes, [
-					{ route: 'instructions', moduleId: 'viewmodels/classic/instructions', title: 'Instructies', nav: true },
+					{ route: 'instructies', moduleId: 'viewmodels/classic/instructions', title: 'Instructies', nav: true },
 					{ route: 'activiteit', moduleId: 'viewmodels/classic/activity', title: 'Activiteit', nav: true }
 				]);
 			} else {
 				ko.utils.arrayPushAll(routes, [
-					{ route: 'instructions', moduleId: 'viewmodels/enhanced/instructions', title: 'Instructions', nav: true },
+					{ route: 'instructies', moduleId: 'viewmodels/enhanced/instructions', title: 'Instructions', nav: true },
 					{ route: 'activiteit', moduleId: 'viewmodels/enhanced/activity', title: 'Activiteit', nav: true }
 				]);
 			}
 			ko.utils.arrayPushAll(routes, [
-				{ route: 'experience', moduleId: 'viewmodels/experience', title: 'Ervaringen', nav: true },
-				{ route: 'thanks', moduleId: 'viewmodels/thanks', title: 'Bedankt', nav: true }
+				{ route: 'ervaring', moduleId: 'viewmodels/experience', title: 'Ervaringen', nav: true },
+				{ route: 'bedankt', moduleId: 'viewmodels/thanks', title: 'Bedankt', nav: true }
 			]);
 			router
 				.map(routes)

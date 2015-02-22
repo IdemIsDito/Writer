@@ -61,7 +61,7 @@
 				context.saveChanges()
 					.then(function () {
 						l.stop();
-						router.navigate('#/instructions');
+						router.navigate('#/instructies');
 						logger.logSuccess('Succesful save', null, 'demograpics.js-next', false);
 					}).fail(function (error) {
 						l.stop();

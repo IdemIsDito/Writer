@@ -9,11 +9,21 @@
 		</div>
 	</fieldset>
 </form>
+<div data-bind="if: satisfactionChecksVisible()">
+	<div class="alert alert-info animated short fadeInDown">
+		<strong>Controleer de bovenstaande beschrijving met onderstaande vragen. Pas, indien nodig, de beschrijving aan.</strong>
+		<ul>
+			<li>Kreeg je een gevoel van voldoening toen je ermee bezig was? Met andere woorden, zat je er echt helemaal middenin, vloog de tijd voorbij en gaan jouw ogen glimmen, als je eraan terugdenkt?</li>
+			<li>Is het méér dan een moment van geluk, een ervaring of een mijlpaal?</li>
+			<li>Heb je ervan genoten, vond je dat je het goed deed? Of vertelde jouw vader, moeder, vrouw, man, vriend, collega of leidinggevende je dat zij het zo leuk van je vonden en dat je er zo goed in was?</li>
+		</ul>
+	</div>
+</div>
 <div class="btn-toolbar btn-toolbar-controls">
 	<button class="btn ladda-button btn-default btn-lg pull-left" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: prev">
 		VORIGE
 	</button>
-	<button class="btn ladda-button btn-default btn-lg pull-right" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: next">
+	<button class="btn ladda-button btn-default btn-lg pull-right" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: activity().SatisfactionIsChecked() ? next : check">
 		VOLGENDE
 	</button>
 </div>

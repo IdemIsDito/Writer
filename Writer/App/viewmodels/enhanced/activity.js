@@ -22,7 +22,6 @@
 			'enhanced/persons',
 			'enhanced/involved-persons',
 			'enhanced/initiation',
-			//'enhanced/subjects',
 			'enhanced/proceedings',
 			'enhanced/satisfaction',
 			'enhanced/overview'

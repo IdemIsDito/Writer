@@ -9,11 +9,21 @@
 		</div>
 	</fieldset>
 </form>
+<div data-bind="if: proceedingsChecksVisible()">
+	<div class="alert alert-info animated short fadeInDown">
+		<strong>Controleer de bovenstaande beschrijving met onderstaande vragen. Pas, indien nodig, de beschrijving aan.</strong>
+		<ul>
+			<li>Zien we je iets doen?</li>
+			<li>Kreeg je iets voor elkaar, bereikte je iets?</li>
+			<li>Heb je ook gedacht aan de activiteit, die zich in jouw hoofd afspeelde (wat je dacht, voelde, voor ogen zag, welk plan je in gedachten had)?</li>
+		</ul>
+	</div>
+</div>
 <div class="btn-toolbar btn-toolbar-controls">
 	<button class="btn ladda-button btn-default btn-lg pull-left" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: prev">
 		VORIGE
 	</button>
-	<button class="btn ladda-button btn-default btn-lg pull-right" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: next">
+	<button class="btn ladda-button btn-default btn-lg pull-right" data-style="zoom-out" data-spinner-color="#999999" data-bind="click: activity().ProceedingsIsChecked() ? next : check">
 		VOLGENDE
 	</button>
 </div>
